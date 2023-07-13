@@ -1,0 +1,109 @@
+@import "../../../assets/scss/mixin";
+.funktionen-modal {
+  &.accordion-wrapper {
+    .accordion {
+      .accordion__item {
+        border: 1px solid #D0D5DD;
+        border-radius: 10px;
+        padding: 0;
+        overflow: hidden;
+        margin-bottom: 24px;
+        @media (max-width: $breakpoint_mobile_portrait) {
+          margin-bottom: 15px;
+        }
+        & + .accordion__item {border: 1px solid #D0D5DD;}
+        .accordion__heading {
+          display: flex;
+          flex-direction: column;
+          .accordion__button {
+            padding: 11px 80px 11px 53px;
+            @media (max-width: $breakpoint_mobile_portrait) {
+              padding: 11px 45px 11px 10px;
+            }
+            &[aria-expanded="true"] {
+              background: #F9FAFB;
+              &:before {
+                right: 37px;
+                transform: rotate(0deg) translateY(-50%);
+                margin-top: 0;
+                @media (max-width: $breakpoint_mobile_portrait) {
+                  right: 10px;
+                }
+              }
+            }
+            &:before {
+              right: 28px;
+              top: 50%;
+              margin-top: -4px;
+              transform: rotate(-45deg) translateY(-50%);
+              @media (max-width: $breakpoint_mobile_portrait) {
+                right: 0;
+              }
+            }
+            figure {
+              margin: 0;
+              img {
+                margin: 0 45px 0 0;
+                width: 96px;
+                height: 66px;
+                object-fit: contain;
+                @media (max-width: $breakpoint_mobile_portrait) {
+                  margin: 0 15px 0 0;
+                  width: 55px;
+                  height: 50px;
+                }
+              }
+              figcaption {
+                h5 {
+                  margin: 0;
+                  @media (max-width: $breakpoint_mobile_portrait) {
+                    font-size: 16px;
+                    margin-bottom: 3px;
+                  }
+                }
+                p {
+                  font-weight: 500;
+                  margin: 0;
+                  font-size: 16px;
+                  color: #475467;
+                  @media (max-width: $breakpoint_mobile_portrait) {
+                    font-size: 14px;
+                    line-height: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .question-list {
+          padding-left: 190px;
+          @media (max-width: $breakpoint_mobile_portrait) {
+            padding: 0 10px;
+          }
+          li {
+            line-height: 22px;
+            color: #475467;
+            position: relative;
+            padding-left: 20px;
+            &:before {
+              content: '';
+              position: absolute;
+              left: 7px;
+              top: 8px;
+              background: #7C7C7C;
+              border-radius: 100%;
+              width: 5px;
+              height: 5px;
+            }
+          }
+        }
+      }
+      .accordion__panel {
+        padding: 24px 50px 45px 0;
+        @media (max-width: $breakpoint_mobile_portrait) {
+          padding-right: 20px;
+        }
+      }
+    }
+  }
+}
