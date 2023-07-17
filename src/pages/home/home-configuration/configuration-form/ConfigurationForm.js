@@ -44,19 +44,19 @@ const ConfigurationForm = () => {
       <aside className="side-widgets">
         <ul className="list-none flex column-direction">
           <li>
-            <label htmlFor="">Installationsort</label>
+            <label htmlFor="">Objekt</label>
             <Select
               options={installationsortValues.options}
               onChange={handleSelectChange("installationsort")}
               values={[
                 installationsortValues.options[
-                  installationsortValues.selectedOption
+                installationsortValues.selectedOption
                 ],
               ]}
             />
           </li>
           <li>
-            <label htmlFor="">Bauvorhaben</label>
+            <label htmlFor="">Projekt</label>
             <Select
               options={bauvorhabenValues.options}
               onChange={handleSelectChange("bauvorhaben")}
@@ -66,7 +66,7 @@ const ConfigurationForm = () => {
             />
           </li>
           <li>
-            <label htmlFor="">Bauphase</label>
+            <label htmlFor="">Phase</label>
             <Select
               options={bauphaseValues.options}
               onChange={handleSelectChange("bauphase")}

@@ -243,7 +243,7 @@ export const getFunktionenPriceImpact = (
     if (unSelectedPricing[f.label]) {
       f.included = `+ ${formatGermanPrice(unSelectedPricing[f.label])}`;
     } else {
-      f.included = "gewählt";
+      f.included = "Inklusive";
     }
   });
 
@@ -459,7 +459,7 @@ export const getBedienungPriceImpact = (
     if (unSelectedPricing[b.label]) {
       b.included = `+ ${formatGermanPrice(unSelectedPricing[b.label])}`;
     } else {
-      b.included = "gewählt";
+      b.included = "Inklusive";
     }
   });
 
@@ -929,11 +929,11 @@ export const modifyDataForServer = (dataForServer) => {
       dataForServer.installationsservice === "Keine Installation"
         ? null
         : [
-            {
-              id: dataForServer.fordermittelservice.id,
-              options: dataForServer.fordermittelservice.options,
-            },
-          ],
+          {
+            id: dataForServer.fordermittelservice.id,
+            options: dataForServer.fordermittelservice.options,
+          },
+        ],
     laufzeit_wartungsservice: dataForServer.laufzeit_wartungsservice && [
       {
         id: dataForServer.laufzeit_wartungsservice[1].id,

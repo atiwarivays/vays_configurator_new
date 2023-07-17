@@ -40,7 +40,35 @@
 <!-- Facebook Domain Verification -->
 
 <script>  var MessageBirdChatWidgetSettings = {     widgetId: 'af0dbb64-de67-4305-a10f-effc22f2b9d7',     initializeOnLoad: true,   };  !function(){"use strict";if(Boolean(document.getElementById("live-chat-widget-script")))console.error("MessageBirdChatWidget: Snippet loaded twice on page");else{var e,t;window.MessageBirdChatWidget={},window.MessageBirdChatWidget.queue=[];for(var i=["init","setConfig","toggleChat","identify","hide","on","shutdown"],n=function(){var e=i[d];window.MessageBirdChatWidget[e]=function(){for(var t=arguments.length,i=new Array(t),n=0;n<t;n++)i[n]=arguments[n];window.MessageBirdChatWidget.queue.push([[e,i]])}},d=0;d<i.length;d++)n();var a=(null===(e=window)||void 0===e||null===(t=e.MessageBirdChatWidgetSettings)||void 0===t?void 0:t.widgetId)||"",o=function(){var e,t=document.createElement("script");t.type="text/javascript",t.src="https://livechat.messagebird.com/bootstrap.js?widgetId=".concat(a),t.async=!0,t.id="live-chat-widget-script";var i=document.getElementsByTagName("script")[0];null==i||null===(e=i.parentNode)||void 0===e||e.insertBefore(t,i)};"complete"===document.readyState?o():window.attachEvent?window.attachEvent("onload",o):window.addEventListener("load",o,!1)}}();</script>
-  </head>
+<script data-obct type = "text/javascript">
+  /** DO NOT MODIFY THIS CODE**/
+  !function(_window, _document) {
+    var OB_ADV_ID = '0060c97262c6c4d41e4026bb9afb66e3de';
+    if (_window.obApi) {
+      var toArray = function(object) {
+        return Object.prototype.toString.call(object) === '[object Array]' ? object : [object];
+      };
+      _window.obApi.marketerId = toArray(_window.obApi.marketerId).concat(toArray(OB_ADV_ID));
+      return;
+    }
+    var api = _window.obApi = function() {
+      api.dispatch ? api.dispatch.apply(api, arguments) : api.queue.push(arguments);
+    };
+    api.version = '1.1';
+    api.loaded = true;
+    api.marketerId = OB_ADV_ID;
+    api.queue = [];
+    var tag = _document.createElement('script');
+    tag.async = true;
+    tag.src = '//amplify.outbrain.com/cp/obtp.js';
+    tag.type = 'text/javascript';
+    var script = _document.getElementsByTagName('script')[0];
+    script.parentNode.insertBefore(tag, script);
+  }(window, document);
+
+  obApi('track', 'PAGE_VIEW');
+</script>
+</head>
   <body>
     <noscript>Smart Home Konfigurator</noscript>
     <div id="root"></div>

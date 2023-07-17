@@ -110,7 +110,7 @@ const initialState = {
     options: [
       {
         value: 0,
-        label: "Installation",
+        label: "mit Installation",
         included: "Inklusive",
       },
       {
@@ -364,7 +364,7 @@ export const saveDataToServer = createAsyncThunk("config/saveDataToServer", asyn
     phone: getState().config.phone,
   };
   const newDataForServer = modifyDataForServer(dataForServer);
-  console.log("Final Selections, please check price impacts in it: " , finalSelections);
+  console.log("Final Selections, please check price impacts in it: ", finalSelections);
 
   try {
     const response = await saveDataToServerApi(newDataForServer);

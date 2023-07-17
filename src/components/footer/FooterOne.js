@@ -34,7 +34,7 @@ export default function FooterOne() {
               }}
               className="submit-button second-btn"
             >
-              In den Warenkorb
+              Weiter zur Übersicht
             </button>
           </div>
         </div>

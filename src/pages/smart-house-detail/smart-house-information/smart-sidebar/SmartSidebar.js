@@ -14,7 +14,7 @@ export default function SmartSidebar({
   openModal,
   faqOpenModal,
 }) {
-//  console.log(finalDataObject);
+  //  console.log(finalDataObject);
 
   return (
     <>
@@ -33,7 +33,7 @@ export default function SmartSidebar({
           </Link>
           {finalDataObject.installationsservice === "Installation" && (
             <>
-              <h6>Vorreservierte Installationstermine</h6>
+              <h6>Ihr Wunschtermin</h6>
               <span>{finalDataObject.installationDate}</span>
               <h6>Installationsdauer</h6>
               <span>ca. {finalDataObject.installationsdauer} Tage</span>

@@ -31,7 +31,7 @@ export default function Vergleich() {
     {
       icon: m2,
       subtitle: "Der Marktführer",
-      title: "homematic ",
+      title: "Homematic ",
       description:
         "Mit homematic setzen Sie auf den Marktführer aus Deutschland mit hochwertiger, sicherer und vollkommen aufeinander abgestimmter Technik für die gängigsten Smart Home Bereiche. ",
       listTitle: "Verbindungsstandards",
@@ -75,7 +75,7 @@ export default function Vergleich() {
     {
       icon: m4,
       subtitle: "Grenzenlose Integrationen",
-      title: "homey",
+      title: "Homey",
       description:
         "Wenn für Sie vor allem die Kompatibilität zu Drittsystemen und eine Vielfalt an Integrationen und Schnittstellen wichtig ist, sind Sie bei Homey genau richtig. ",
       listTitle: "Verbindungsstandards",

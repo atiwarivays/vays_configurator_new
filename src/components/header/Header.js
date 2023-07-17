@@ -99,7 +99,14 @@ export default function Header() {
               </Link>
             )}
 
+            <ul className="flex list-none">
+              <li className="flex items-center gap-10 m-reverse">
+                <label className="simple-label">40</label>
+                <span>Konfigurationen heute</span>
+              </li>
+            </ul>
             <ul className={`flex list-none right-section ${isOpenDropDown ? "active_drop" : ""}`}>
+
               <li>
                 <button
                   className="transparent-button flex items-center"

@@ -22,7 +22,7 @@ const SmartHouseSidebar = (props) => {
         <h2 className="sidebar-title">Ihre Smart Home Konfiguration</h2>
         <aside className="side-widgets smart-house">
           <section>
-            <h6>Vorreservierte Installationstermine</h6>
+            <h6>Ihr Wunschtermin</h6>
             <span>{installationDate}</span>
             {installationServiceValues.options[installationServiceValues.selectedOption].label === "Installation" && (
               <>
@@ -31,7 +31,7 @@ const SmartHouseSidebar = (props) => {
               </>
             )}
             <button onClick={props.warenkorbModal} className="submit-button">
-              In den Warenkorb
+              Weiter zur Übersicht
             </button>
             <button onClick={props.expertAdviceModal} className="submit-button transparent">
               Persönliche Fachberatung
