@@ -1,4 +1,5 @@
 import Select from "react-dropdown-select";
+import { useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import {
   getBauphase,
@@ -7,6 +8,8 @@ import {
   getRaume,
   konfigurationActions,
 } from "../../../../utils/store-2/konfiguration-slice";
+import { Link } from "react-scroll";
+import downArrow from "../../../../assets/images/down-arrow-1.svg";
 
 const ConfigurationForm = () => {
   const dispatch = useDispatch();
@@ -40,7 +43,7 @@ const ConfigurationForm = () => {
 
   return (
     <>
-      <h1 className="sidebar-title">Ihre Smart Home Konfiguration</h1>
+      <h1 className="sidebar-title mt-50">Ihre Smart Home Konfiguration</h1>
       <aside className="side-widgets">
         <ul className="list-none flex column-direction">
           <li>
@@ -85,6 +88,11 @@ const ConfigurationForm = () => {
           </li>
         </ul>
       </aside>
+      <div className="down-arrow">
+        <a href="#">
+          <img src={downArrow} alt="downArrow" />
+        </a>
+      </div>
     </>
   );
 };

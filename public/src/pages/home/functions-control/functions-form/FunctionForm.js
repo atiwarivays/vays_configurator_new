@@ -7,6 +7,8 @@ import {
   konfigurationActions,
 } from "../../../../utils/store-2/konfiguration-slice";
 import { findDataPair, findObjectByKeyValue } from "../../../../utils/constants/api";
+import { Link } from "react-scroll";
+import downArrow from "../../../../assets/images/down-arrow-1.svg";
 
 const FunctionForm = ({ openModal, functionSelection }) => {
   const dispatch = useDispatch();
@@ -72,6 +74,7 @@ const FunctionForm = ({ openModal, functionSelection }) => {
     }
   };
 
+
   return (
     <>
       <h2 className="sidebar-title">Funktionen</h2>
@@ -80,27 +83,27 @@ const FunctionForm = ({ openModal, functionSelection }) => {
           <li onClick={() => showCheckList()} className={`mobile_list ${checkList === true ? "show_list" : ""}`}>
             {!checkList
               ? checkedLabels.map((data, index) => {
-                  return (
-                    <span key={index} className="info-tag">
-                      {data}
-                      {index !== checkedLabels.length - 1 && ","}
-                    </span>
-                  );
-                })
+                return (
+                  <span key={index} className="info-tag">
+                    {data}
+                    {index !== checkedLabels.length - 1 && ","}
+                  </span>
+                );
+              })
               : data.functions?.map((data, index) => {
-                  return (
-                    <span key={index} className="info-tag">
-                      {data}
-                    </span>
-                  );
-                })}
+                return (
+                  <span key={index} className="info-tag">
+                    {data}
+                  </span>
+                );
+              })}
             <i className="fa fa-angle-down" />
           </li>
           {functionSelection.map(({ id, label, included, checked }, index) => {
             return (
               <li key={index}>
                 <label htmlFor={id} className={`check-box`} onChange={handleChange}>
-                  <input type="checkbox" value={label} checked={checked} name="functions" id={id} onChange={() => {}} />
+                  <input type="checkbox" value={label} checked={checked} name="functions" id={id} onChange={() => { }} />
                   <span>
                     {label} <strong>{included}</strong>
                   </span>

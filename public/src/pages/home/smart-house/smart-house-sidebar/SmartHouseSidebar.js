@@ -26,7 +26,7 @@ const SmartHouseSidebar = (props) => {
             <span>{installationDate}</span>
             {installationServiceValues.options[installationServiceValues.selectedOption].label === "Installation" && (
               <>
-                <h6>Installationsdauer</h6>
+                <h6>Geschätzte Installationstage</h6>
                 <span>ca. {installationsdauer} Tage</span>
               </>
             )}

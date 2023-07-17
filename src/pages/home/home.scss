@@ -349,7 +349,7 @@
       }
 
       .sidebar-title {
-        margin: 0 0 24px;
+        margin: 100px 0 24px;
         text-align: center;
         font-weight: 700;
         line-height: 1.25;
@@ -364,8 +364,16 @@
         }
       }
 
+      .sidebar-title.mt-50 {
+        margin-top: 50px;
+      }
+
+      .down-arrow {
+        text-align: center;
+      }
+
       .side-widgets {
-        margin-bottom: 120px;
+        margin-bottom: 70px;
 
         @media (max-width: $breakpoint_tablet) {
           margin-bottom: 50px;

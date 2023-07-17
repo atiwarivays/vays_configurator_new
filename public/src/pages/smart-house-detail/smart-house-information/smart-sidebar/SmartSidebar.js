@@ -35,7 +35,7 @@ export default function SmartSidebar({
             <>
               <h6>Ihr Wunschtermin</h6>
               <span>{finalDataObject.installationDate}</span>
-              <h6>Installationsdauer</h6>
+              <h6>Geschätzte Installationstage</h6>
               <span>ca. {finalDataObject.installationsdauer} Tage</span>
             </>
           )}
