@@ -64,11 +64,11 @@ const HomeConfiguration = () => {
         </div>
         <div className="sidebar-options">
           <ConfigurationForm />
-          <IntentionForm
+          {/* <IntentionForm
             openModal={() => {
               setOpenIntention(!openIntention);
             }}
-          />
+          /> */}
           <ZentraleForm
             openModal={() => {
               setOpenTabSystemeModal(!openTabSystemeModal);
