@@ -1,0 +1,192 @@
+@import './_reset.scss';
+h1 { font-size: 26px;}
+h2 { font-size: 24px;}
+h3 { font-size: 22px;}
+h4 { font-size: 20px;}
+h5 { font-size: 18px;}
+h6 { font-size: 16px;}
+h1,h2,h3,h4,h5,h6 {
+  color: #122c44;
+  a {
+    color: var(--black-color);
+  }
+}
+p {
+  line-height: 25px;
+  margin: 0 0 10px;
+  a {
+    color: var(--black-color);
+  }
+}
+a {
+  color: var(--black-color);
+  text-decoration: none;
+}
+a {
+  &:hover, &:focus, &:active{
+    outline: none;
+    text-decoration: none;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+//select
+.side-widgets {
+  .react-dropdown-select {
+    border: 1px solid #D0D5DD;
+    border-radius: 30px;
+    min-height: 55px;
+    padding: 2px 24px;
+    &:hover,&:focus,&:focus-within {
+      outline: 0;
+      box-shadow: none;
+      border-color: #D0D5DD;
+    }
+    &[aria-expanded="true"] {
+      border-radius: 27px 27px 0 0;
+      border-bottom: none;
+    }
+  }
+  .react-dropdown-select-input {
+    font-size: 16px;
+    margin-left: 0;
+    @media (max-width: $breakpoint_laptop) {
+      font-size: 14px;
+    }
+
+  }
+  .react-dropdown-select-dropdown {
+    box-shadow: none;
+    border: 1px solid #D0D5DD;
+    border-radius: 0 0 27px 27px;
+    border-top: none;
+    top: 50px;
+    span {
+      padding-left: 24px;
+    }
+  }
+  .react-dropdown-select-content {
+    & > span,
+    & > input {
+      color: #122c44;
+    }
+  }
+  .react-dropdown-select-content,
+  .react-dropdown-select-item {
+    p {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      color: #122c44;
+      small {
+        font-size: 16px;
+        font-weight: 600;
+        color: #122c44;
+        position: absolute;
+        right: 46px;
+        @media (max-width: $breakpoint_laptop) {
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .react-dropdown-select-item-selected {
+    p {
+      small { color: #122c44;}
+    }
+  }
+  .react-dropdown-select-dropdown-handle { margin-bottom: 3px;}
+
+  .react-dropdown-select-item:hover, .react-dropdown-select-item:focus { background: none;}
+  .react-dropdown-select-item-selected {
+    background: #F9FAFB !important;
+    color: #122c44 !important;
+    border-bottom: none !important;
+  }
+  .react-dropdown-select-item {color: #122c44 !important;}
+}
+.rmdp-container  {
+  position: relative;
+  &:before {
+    content: '\f107';
+    font-family: FontAwesome;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    font-size: 16px;
+    pointer-events: none;
+  }
+  input[type="text"] {
+    cursor: pointer;
+    border: 1px solid #D0D5DD;
+    border-radius: 30px;
+    min-height: 55px;
+    padding: 2px 50px 2px 24px;
+    width: 100%;
+    &:focus{ box-shadow: none}
+    //@media (max-width: $breakpoint_laptop) {
+    //  min-height: 50px;
+    //}
+  }
+  .rmdp-panel-body li {
+    background: transparent;
+    span {
+      color: #122c44;
+      font-size: 12px;
+    }
+  }
+  .rmdp-day.rmdp-selected span:not(.highlight) { background: #292D36}
+}
+.react-datepicker-popper {
+  width: 100%;
+  .react-datepicker {
+    width: 100%;
+    border: none;
+    box-shadow: 0 0 16px rgba(0,0,0,0.09);
+    border-radius: 5px;
+    .react-datepicker__day--selected {background-color: var(--theme-color)}
+    .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name {
+      width: 12%;
+    }
+    .react-datepicker__triangle {
+      &:before {
+        border-bottom-color: transparent;
+      }
+      &:after {
+        border-bottom-color: #ffffff;
+      }
+    }
+    .react-datepicker__month-container {
+      width: 100%;
+      .react-datepicker__header {
+        border-bottom-color: #D0D5DD;
+        background: transparent;
+      }
+    }
+  }
+}
+.desktop-view {
+  .modal-dialog {
+    .remove-desktop {
+      @media (max-width: $breakpoint_mobile_landscape) {
+        display: none !important;
+      }
+    }
+  }
+}
+.mobile-view {
+  width: 100%;
+  img { width: auto !important;}
+  display: none;
+  .swiper-slide .modal-content {
+    background: #ffffff !important;
+    @media (max-width: $breakpoint_mobile_portrait) {
+      height: 750px;
+    }
+  }
+  @media (max-width: $breakpoint_mobile_landscape) {
+    display: block;
+  }
+}

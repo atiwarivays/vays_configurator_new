@@ -1,0 +1,44 @@
+@import "../../../assets/scss/mixin";
+.intention-modal {
+  margin-top: 11px;
+  ul {
+    margin: 0 -18px;
+    li {
+      width: 33.333%;
+      padding: 0 18px;
+      margin-bottom: 32px;
+      @media (max-width: $breakpoint_mobile_landscape) {
+        width: 50%;
+      }
+      @media (max-width: $breakpoint_mobile_portrait) {
+        width: 100%;
+      }
+      section {
+        padding: 26px 22px 0;
+        text-align: center;
+        border: 1px solid #D0D5DD;
+        border-radius: 10px;
+        height: 100%;
+        img {
+          margin-bottom: 22px;
+          height: 46px;
+          object-fit: contain;
+        }
+        h3 {
+          font-size: 18px;
+          line-height: 23px;
+          white-space: pre-line;
+          margin: 0 0 14px;
+        }
+        p {
+          color: #475467;
+          font-size: 16px;
+          margin: 0 0 15px;
+          line-height: 20px;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+

@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getBedienung, konfigurationActions } from "../../../../utils/store-2/konfiguration-slice";
+import { Link } from "react-scroll";
+import downArrow from "../../../../assets/images/down-arrow-1.svg";
 
 const ServiceForm = ({ openModal }) => {
   const dispatch = useDispatch();
@@ -13,7 +15,7 @@ const ServiceForm = ({ openModal }) => {
   //       Number(b.included.replace(/[^\d,-]/g, "").replace(",", "."))
   //   )
   // );
-  
+
   return (
     <>
       <h2 className="sidebar-title">Bedienung</h2>
@@ -45,6 +47,11 @@ const ServiceForm = ({ openModal }) => {
           </li>
         </ul>
       </aside>
+      <div className="down-arrow">
+        <a href="#">
+          <img src={downArrow} alt="downArrow" />
+        </a>
+      </div>
     </>
   );
 };

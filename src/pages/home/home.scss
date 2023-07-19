@@ -1,14 +1,18 @@
 @import "../../assets/scss/mixin";
+
 .main-wrapper {
   padding: 73px 0 77px;
   width: 100%;
   overflow: hidden;
+
   @media (max-width: $breakpoint_tablet) {
     padding: 50px 0 77px;
   }
+
   @media (max-width: $breakpoint_mobile_portrait) {
     padding: 30px 0 90px;
   }
+
   .collapse-btn {
     background: none;
     padding: 0;
@@ -21,6 +25,7 @@
     width: 100%;
     margin-bottom: 18px;
     color: #475467;
+
     i {
       background: #eaecf0;
       align-items: center;
@@ -33,20 +38,25 @@
       height: 24px;
     }
   }
+
   .container {
     padding: 0;
+
     @media (max-width: $breakpoint_tablet) {
       max-width: 700px;
     }
   }
+
   .slide-wrapper {
     justify-content: space-between;
     position: relative;
     padding-top: 120px;
+
     @media (max-width: $breakpoint_tablet) {
       flex-direction: column;
       padding-top: 30px;
     }
+
     &.installation_control {
       .content-side {
         .image-wrapper {
@@ -58,6 +68,7 @@
         }
       }
     }
+
     &.service_control {
       .image-wrapper {
         figure {
@@ -69,41 +80,50 @@
         }
       }
     }
+
     &.function_control {
       .content-side {
         @media (max-width: $breakpoint_mobile_portrait) {
           margin-bottom: 0;
         }
       }
+
       .sidebar-options {
         margin-bottom: 20px;
       }
+
       figure {
         @media (max-width: $breakpoint_mobile_portrait) {
           width: 430px !important;
           max-width: 430px;
           margin: 0 auto !important;
         }
-        & > img {
+
+        &>img {
           @media (max-width: $breakpoint_laptop) {
             height: 360px;
             object-fit: cover;
           }
         }
       }
+
       .progressbar-counter {
         display: none;
+
         @media (max-width: $breakpoint_tablet) {
           display: inherit;
         }
       }
     }
+
     &:first-child {
       padding-top: 30px;
+
       @media (max-width: $breakpoint_tablet) {
         padding: 0;
       }
     }
+
     .content-side {
       position: fixed;
       //background: #ffffff;
@@ -115,22 +135,28 @@
       align-items: center;
       opacity: 0;
       transition: all 0.6s ease-in-out;
+
       @media (min-width: 1920px) {
         top: 74px;
         height: calc(100vh - 150px);
       }
+
       @media (max-width: $breakpoint_minixx_laptop) {
         width: calc(100vw - 390px);
       }
+
       @media (max-width: $breakpoint_minix_laptop) {
         width: calc(100vw - 360px);
       }
+
       @media (max-width: $breakpoint_mini_laptop) {
         width: calc(100vw - 320px);
       }
+
       @media (max-width: 1090px) {
         width: calc(100vw - 300px);
       }
+
       @media (max-width: $breakpoint_tablet) {
         width: 100%;
         position: relative;
@@ -140,44 +166,55 @@
         margin-bottom: 30px;
       }
     }
+
     .active {
       pointer-events: none;
-      & ~ .content-side {
+
+      &~.content-side {
         opacity: 1;
         z-index: 1;
       }
     }
+
     .image-wrapper {
       margin: 0 auto;
       width: 1045px;
       overflow: hidden;
       height: 100%;
       max-height: 737px;
+
       .swiper {
         height: 637px;
+
         @media (max-width: $breakpoint_13pro_laptop) {
           height: 100%;
         }
+
         @media (max-width: $breakpoint_tablet) {
           height: auto;
         }
+
         @media (min-width: 2560px) {
           max-height: 990px;
           height: 100%;
         }
       }
+
       @media (max-width: $breakpoint_mobile_portrait) {
         .swiper-slide {
           height: unset;
         }
       }
+
       @media (min-width: 1920px) {
         max-height: 746px;
       }
+
       @media (min-width: 2560px) {
         width: 1600px;
         max-height: 990px;
       }
+
       //@media (max-width: $breakpoint_minix_laptop) {
       //  margin-right: 10px;
       //}
@@ -185,69 +222,87 @@
         //width: 800px;
         margin-right: auto;
       }
+
       @media (max-width: $breakpoint_tablet) {
         width: 705px;
       }
+
       @media (max-width: $breakpoint_tablet) {
         width: 100%;
       }
+
       figure {
         position: relative;
         margin: 0;
         width: 100%;
         height: 100%;
+
         @media (max-width: $breakpoint_tablet) {
           height: auto;
         }
+
         @media (max-width: $breakpoint_mobile_portrait) {
           text-align: center;
         }
+
         //@media (min-width: 2560px) {
         //  height: 100%;
         //}
-        & > img,
+        &>img,
         .scale-image {
           width: 1045px;
           //max-width: 100%;
           height: 100%;
           object-fit: cover;
+
           @media (max-width: $breakpoint_mini_laptop) {
             width: 945px;
           }
+
           @media (max-width: $breakpoint_mobile_portrait) {
             display: inline-block;
           }
+
           @media (max-width: $breakpoint_tablet) {
             width: 100%;
             height: auto !important;
           }
+
           @media (min-width: 1441px) {
             border-radius: 5px;
           }
+
           @media (min-width: 2560px) {
             width: 1600px;
           }
+
           &.img_one {
             background: url("../../assets/images/homeim.webp") bottom left;
             background-size: 100% auto;
+
             @media (max-width: $breakpoint_tablet) {
               height: 387px !important;
             }
+
             @media (max-width: $breakpoint_mobile_portrait) {
               height: 200px !important;
             }
           }
+
           &.img_two {
             background: url("../../assets/images/homeim2.webp") bottom center;
             background-size: 100% auto;
+
             @media (max-width: $breakpoint_tablet) {
               height: 387px !important;
             }
+
             @media (max-width: $breakpoint_mobile_portrait) {
               height: 200px !important;
             }
           }
         }
+
         figcaption {
           position: absolute;
           left: 0;
@@ -257,6 +312,7 @@
         }
       }
     }
+
     .sidebar-options {
       flex: 0 0 416px;
       max-width: 416px;
@@ -264,102 +320,134 @@
       margin-left: auto;
       position: relative;
       z-index: 2;
+
       @media (max-width: $breakpoint_minix_laptop) {
         flex: 0 0 370px;
         max-width: 370px;
         padding: 0 32px 0;
       }
+
       @media (max-width: $breakpoint_mini_laptop) {
         flex: 0 0 320px;
         max-width: 320px;
         //padding: 0 10px;
       }
+
       @media (max-width: $breakpoint_tablet) {
         flex: 0 0 100%;
         max-width: 100%;
         margin-left: 0;
         width: 100%;
       }
+
       @media (max-width: $breakpoint_mobile_portrait) {
         padding: 0 20px;
       }
+
       @media (max-width: 320px) {
         padding: 0 15px;
       }
+
       .sidebar-title {
-        margin: 0 0 24px;
+        margin: 100px 0 24px;
         text-align: center;
         font-weight: 700;
         line-height: 1.25;
         font-size: 32px;
+
         @media (max-width: $breakpoint_laptop) {
           font-size: 28px;
         }
+
         @media (max-width: $breakpoint_minix_laptop) {
           font-size: 26px;
         }
       }
+
+      .sidebar-title.mt-50 {
+        margin-top: 50px;
+      }
+
+      .down-arrow {
+        text-align: center;
+      }
+
       .side-widgets {
-        margin-bottom: 120px;
+        margin-bottom: 70px;
+
         @media (max-width: $breakpoint_tablet) {
           margin-bottom: 50px;
         }
+
         &.trustpilot {
           .swiper-button-disabled {
             display: none;
           }
+
           img {
             margin-bottom: 30px;
             width: auto;
             max-width: 100%;
           }
+
           @media (max-width: $breakpoint_mobile_portrait) {
             .swiper {
               margin-bottom: 44px;
             }
           }
+
           iframe {
             width: 100%;
           }
+
           .side-swiper-slide {
             margin: 0 -20px;
+
             @media (max-width: 320px) {
               margin: 0 -10px;
             }
           }
+
           .swiper {
             .swiper-slide {
               padding: 0 20px;
             }
+
             .swiper-button-next {
               right: var(--swiper-navigation-sides-offset, 0);
               box-shadow: none;
             }
+
             .swiper-button-prev {
               left: var(--swiper-navigation-sides-offset, 0);
               box-shadow: none;
             }
           }
         }
+
         &.smart-house {
           section {
             text-align: center;
+
             h6 {
               margin: 0 0 12px;
               display: flex;
               justify-content: center;
+
               span {
                 font-weight: 400;
                 display: inherit;
                 margin-left: 15px;
               }
             }
-            & > span {
+
+            &>span {
               line-height: 20px;
               margin: 0 0 12px;
               display: block;
               color: #475467;
             }
+
             a {
               &.pdf-down {
                 font-weight: 400;
@@ -367,6 +455,7 @@
                 display: inline-block;
                 margin-bottom: 15px;
                 text-decoration: underline;
+
                 img {
                   margin: 4px 0 0;
                 }
@@ -374,29 +463,34 @@
             }
           }
         }
+
         &:last-child {
           margin-bottom: 30px;
         }
+
         &.intention-wrapper {
-          & > ul {
-            & > li {
+          &>ul {
+            &>li {
               margin-bottom: 16px;
             }
           }
         }
+
         &.installation-wrapper {
-          & > ul {
+          &>ul {
             margin-bottom: 24px;
           }
         }
-        & > ul {
+
+        &>ul {
           @media (min-width: $breakpoint_mobile_portrait) and (max-width: $breakpoint_tablet) {
             flex-wrap: wrap;
             flex-direction: row;
             margin: 0 -10px;
           }
+
           &.installation_list {
-            & > li {
+            &>li {
               &:first-child {
                 @media (min-width: $breakpoint_mobile_portrait) and (max-width: $breakpoint_tablet) {
                   width: 100%;
@@ -404,8 +498,10 @@
               }
             }
           }
+
           &.intention_list {
-            & > li {
+            &>li {
+
               &:first-child,
               &:last-child {
                 @media (min-width: $breakpoint_mobile_portrait) and (max-width: $breakpoint_tablet) {
@@ -414,10 +510,12 @@
               }
             }
           }
+
           &.intention-wrap {
-            & > li {
+            &>li {
               &:last-child {
                 margin-bottom: 24px;
+
                 label {
                   span {
                     strong {
@@ -429,15 +527,18 @@
               }
             }
           }
-          & > li {
+
+          &>li {
             display: flex;
             flex-direction: column;
             margin-bottom: 24px;
             position: relative;
+
             @media (min-width: $breakpoint_mobile_portrait) and (max-width: $breakpoint_tablet) {
               width: 50%;
               padding: 0 10px;
             }
+
             //&:last-child{ margin-bottom: 0;}
             label {
               color: #122c44;
@@ -445,6 +546,7 @@
               line-height: 20px;
               margin-bottom: 12px;
               font-size: 16px;
+
               small {
                 font-weight: 400;
                 font-size: 12px;
@@ -458,6 +560,7 @@
     }
   }
 }
+
 .submit-button {
   height: 55px;
   width: 100%;
@@ -472,18 +575,22 @@
   font-size: 18px;
   margin: 0 0 16px;
   @include transition;
+
   @media (max-width: $breakpoint_mobile_portrait) {
     font-size: 16px;
   }
+
   &.transparent {
     border-color: #292d36;
     background: #ffffff;
     color: #292d36;
   }
+
   &:hover {
     transform: scale(1.1);
   }
 }
+
 .simple-btn {
   height: 32px;
   color: #475467;
@@ -494,10 +601,31 @@
   background: #eaecf0;
   border-radius: 30px;
   padding: 0 24px;
+
   @media (max-width: $breakpoint_mini_laptop) {
     font-size: 14px;
   }
 }
+
+.simple-label {
+  height: 22px;
+  color: #475467;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  background: #EFEFEF;
+  border-radius: 30px;
+  padding: 6px 14px;
+
+  @media (max-width: $breakpoint_mobile_portrait) {
+    padding: 6px 10px;
+  }
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
 .control-options {
   background: #fefefe;
   display: flex;
@@ -508,19 +636,23 @@
   align-items: center;
   position: absolute;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+
   @media (max-width: $breakpoint_tablet) {
     width: 40px;
     height: 40px;
   }
+
   @media (max-width: $breakpoint_mobile_portrait) {
     width: 30px;
     height: 30px;
   }
+
   &.services-list {
     &.opo-1 {
       left: 422px;
       bottom: 65px;
       top: auto;
+
       //@media (max-width: $breakpoint_minix_laptop) {
       //  left: 359px;
       //  bottom: 53px;
@@ -529,27 +661,33 @@
         left: 656px;
         bottom: 138px;
       }
+
       @media (max-width: $breakpoint_mini_laptop) {
         left: 378px;
         bottom: 57px;
       }
+
       @media (max-width: $breakpoint_tablet) {
         left: 280px;
         bottom: 35px;
       }
+
       @media (max-width: $breakpoint_mobile_portrait) {
         left: 168px;
         bottom: 22px;
       }
+
       &:before {
         left: 50%;
         top: -8px;
         transform: translate(-50%, 0);
       }
     }
+
     &.opo-2 {
       left: 650px;
       bottom: 305px;
+
       //@media (max-width: $breakpoint_minix_laptop) {
       //  right: 295px;
       //  bottom: 270px;
@@ -558,30 +696,37 @@
         left: 1015px;
         bottom: 469px;
       }
+
       @media (max-width: $breakpoint_mini_laptop) {
         left: 589px;
         bottom: 280px;
       }
+
       @media (max-width: $breakpoint_tablet) {
         right: 228px;
         bottom: 215px;
         left: unset;
       }
+
       @media (max-width: $breakpoint_mobile_portrait) {
         right: 135px;
         bottom: 135px;
       }
+
       &:before {
         bottom: -8px;
         right: 50%;
+
         @media (max-width: $breakpoint_mobile_portrait) {
           bottom: -17px;
         }
       }
     }
+
     &.opo-3 {
       left: 785px;
       bottom: 290px;
+
       //@media (max-width: $breakpoint_minix_laptop) {
       //  right: 175px;
       //  bottom: 255px;
@@ -590,23 +735,28 @@
         left: 1215px;
         bottom: 445px;
       }
+
       @media (max-width: $breakpoint_mini_laptop) {
         left: 708px;
         bottom: 266px;
       }
+
       @media (max-width: $breakpoint_tablet) {
         right: 137px;
         bottom: 203px;
         left: unset;
       }
+
       @media (max-width: $breakpoint_mobile_portrait) {
         right: 82px;
         bottom: 131px;
       }
     }
+
     &.opo-4 {
       left: 275px;
       bottom: 140px;
+
       //@media (max-width: $breakpoint_minix_laptop) {
       //  left: 240px;
       //  bottom: 121px;
@@ -615,27 +765,33 @@
         left: 432px;
         bottom: 215px;
       }
+
       @media (max-width: $breakpoint_mini_laptop) {
         left: 245px;
         bottom: 128px;
       }
+
       @media (max-width: $breakpoint_tablet) {
         left: 180px;
         bottom: 97px;
       }
+
       @media (max-width: $breakpoint_mobile_portrait) {
         left: 110px;
         bottom: 70px;
       }
+
       &:before {
         bottom: -8px;
         left: 50%;
         transform: translate(-50%, 0);
       }
     }
+
     &.opo-5 {
       left: 505px;
       bottom: 150px;
+
       //@media (max-width: $breakpoint_minix_laptop) {
       //  left: 437px;
       //  bottom: 129px;
@@ -644,23 +800,28 @@
         left: 785px;
         bottom: 232px;
       }
+
       @media (max-width: $breakpoint_mini_laptop) {
         left: 454px;
         bottom: 139px;
       }
+
       @media (max-width: $breakpoint_tablet) {
         left: 335px;
         bottom: 110px;
       }
+
       @media (max-width: $breakpoint_mobile_portrait) {
         left: 203px;
         bottom: 74px;
       }
     }
   }
+
   &.opo-1 {
     left: 290px;
     bottom: 150px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 250px;
     //  bottom: 140px;
@@ -669,21 +830,26 @@
       left: 460px;
       bottom: 250px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 260px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 190px;
       bottom: 105px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 115px;
       bottom: 70px;
     }
   }
+
   &.opo-2 {
     left: 190px;
     bottom: 230px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 165px;
     //  bottom: 200px;
@@ -692,17 +858,21 @@
       left: 300px;
       bottom: 355px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       bottom: 208px;
       left: 180px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       bottom: 155px;
       left: 135px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       bottom: 74px;
       left: 50px;
+
       &:before {
         bottom: 50%;
         right: -6px;
@@ -711,9 +881,11 @@
       }
     }
   }
+
   &.opo-3 {
     left: 121px;
     bottom: 395px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 105px;
     //  bottom: 312px;
@@ -722,43 +894,52 @@
       left: 140px;
       bottom: 539px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 108px;
       bottom: 359px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 85px;
       bottom: 270px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 42px;
       bottom: 170px;
     }
   }
+
   &.opo-4 {
     left: 300px;
     bottom: 360px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 270px;
     //  bottom: 310px;
     //}
-    @media (min-width: 2560px) {
-    }
+    @media (min-width: 2560px) {}
+
     @media (max-width: $breakpoint_mini_laptop) {
       bottom: 340px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 240px;
       bottom: 260px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 130px;
       bottom: 163px;
     }
   }
+
   &.opo-5 {
     left: 397px;
     bottom: 95px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 338px;
     //  bottom: 86px;
@@ -767,22 +948,27 @@
       left: 621px;
       bottom: 147px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 355px;
       bottom: 90px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 262px;
       bottom: 70px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 159px;
       bottom: 53px;
     }
   }
+
   &.opo-6 {
     left: 28px;
     bottom: 190px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 28px;
     //  bottom: 165px;
@@ -791,31 +977,39 @@
       left: 50px;
       bottom: 310px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       bottom: 168px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 16px;
       bottom: 150px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 9px;
       bottom: 97px;
     }
+
     &:before {
       bottom: 50%;
       left: -8px;
+
       @media (max-width: $breakpoint_tablet) {
         left: 0;
         bottom: -3px;
         transform: none;
       }
+
       transform: translate(0, 50%);
     }
   }
+
   &.opo-7 {
     left: 400px;
     bottom: 305px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 341px;
     //  bottom: 265px;
@@ -824,25 +1018,31 @@
       left: 626px;
       bottom: 465px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 358px;
       bottom: 280px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 264px;
       bottom: 210px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 173px;
       bottom: 135px;
+
       &:before {
         transform: translate(-14px, -4px);
       }
     }
   }
+
   &.opo-8 {
     left: 88px;
     bottom: 265px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 80px;
     //  bottom: 230px;
@@ -851,33 +1051,41 @@
       left: 170px;
       bottom: 420px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       bottom: 240px;
       left: 77px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 100px;
       bottom: 207px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 58px;
       bottom: 130px;
     }
+
     &:before {
       bottom: 50%;
       right: -8px;
       left: unset;
+
       @media (max-width: $breakpoint_tablet) {
         left: 5px;
         right: unset;
         bottom: -3px;
       }
+
       transform: translate(0, 50%);
     }
   }
+
   &.opo-9 {
     left: 520px;
     bottom: 230px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 450px;
     //  bottom: 200px;
@@ -886,26 +1094,32 @@
       left: 802px;
       bottom: 330px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 470px;
       bottom: 208px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 355px;
       bottom: 155px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 220px;
       bottom: 100px;
+
       &:before {
         left: 6px;
         bottom: -6px;
       }
     }
   }
+
   &.opo-10 {
     left: 672px;
     bottom: 185px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  right: 275px;
     //  bottom: 165px;
@@ -914,37 +1128,46 @@
       left: 1041px;
       bottom: 285px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 605px;
       bottom: 170px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       right: 214px;
       bottom: 130px;
       left: unset;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       right: 119px;
       bottom: 87px;
+
       &:before {
         transform: translate(-10px, -2px);
       }
     }
   }
+
   &.opo-11 {
     left: 825px;
     bottom: 175px;
+
     @media (min-width: 2560px) {
       left: 1265px;
       bottom: 270px;
     }
+
     @media (max-width: $breakpoint_minix_laptop) {
       left: 775px;
       bottom: 150px;
+
       &:before {
         left: unset;
         right: -15px;
         bottom: 50%;
+
         @media (max-width: $breakpoint_mobile_portrait) {
           bottom: -8px;
           left: 50%;
@@ -952,22 +1175,27 @@
         }
       }
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 688px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       right: 115px;
       left: unset;
       bottom: 100px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       right: 70px;
       bottom: 85px;
     }
   }
+
   &.opo-12 {
     bottom: 150px;
     left: 533px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  bottom: 130px;
     //  right: 400px;
@@ -976,27 +1204,33 @@
       left: 830px;
       bottom: 235px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 480px;
       bottom: 135px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: unset;
       right: 305px;
       bottom: 100px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       right: 185px;
       bottom: 25px;
+
       &:before {
         bottom: unset;
         top: -8px;
       }
     }
   }
+
   &.opo-13 {
     left: 117px;
     bottom: 20px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 100px;
     //  bottom: 15px;
@@ -1005,46 +1239,56 @@
       left: 190px;
       bottom: 55px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 107px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 85px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 53px;
       bottom: 13px;
     }
+
     &:before {
       bottom: 50%;
       left: -8px;
       transform: translate(0, 50%);
     }
   }
+
   &.opo-14 {
     left: 465px;
     bottom: 160px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 400px;
     //  bottom: 145px;
     //}
-    @media (min-width: 2560px) {
-    }
+    @media (min-width: 2560px) {}
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 415px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       left: 308px;
       bottom: 120px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 186px;
       bottom: 80px;
     }
   }
+
   &.opo-15 {
     left: 615px;
     bottom: 125px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  right: 330px;
     //  bottom: 110px;
@@ -1053,34 +1297,42 @@
       left: 970px;
       bottom: 210px;
     }
+
     @media (max-width: $breakpoint_mini_laptop) {
       left: 550px;
       bottom: 110px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       right: 255px;
       bottom: 90px;
       left: unset;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       right: 122px;
       bottom: 36px;
     }
+
     &:before {
       bottom: 50%;
       left: unset;
       right: -8px;
+
       @media (max-width: $breakpoint_mobile_portrait) {
         right: unset;
         left: -8px;
         transform: translate(4px, -10px);
       }
+
       transform: translate(0, 50%);
     }
   }
+
   &.opo-16 {
     left: 20px;
     bottom: 80px;
+
     //@media (max-width: $breakpoint_minix_laptop) {
     //  left: 20px;
     //  bottom: 80px;
@@ -1089,23 +1341,29 @@
       left: 60px;
       bottom: 140px;
     }
+
     @media (max-width: $breakpoint_tablet) {
       bottom: 65px;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       left: 5px;
       bottom: 48px;
     }
   }
+
   &.active {
     background: #01e994;
+
     img {
       filter: brightness(10);
     }
   }
+
   img {
     max-width: 100%;
   }
+
   &:before {
     content: "";
     position: absolute;
@@ -1118,27 +1376,34 @@
     background: var(--white-color);
   }
 }
+
 .progressbar-group {
   margin: 5px -24px 10px;
   padding: 0 47px;
+
   @media (max-width: $breakpoint_big_tablet) {
     margin: 15px -15px 0;
     padding: 0 30px;
   }
+
   @media (max-width: $breakpoint_tablet) {
     display: none;
   }
+
   @media (min-width: 2560px) {
     margin: 5px auto 10px;
     max-width: 900px;
     padding: 0;
   }
+
   section {
     width: 57%;
     padding: 0 24px;
+
     @media (max-width: $breakpoint_big_tablet) {
       padding: 0 15px;
     }
+
     &.without_subtitle {
       ul {
         li {
@@ -1148,11 +1413,14 @@
         }
       }
     }
+
     &:last-child {
       width: 43%;
     }
+
     .titles {
       margin-bottom: 5px;
+
       h3 {
         font-size: 14px;
         margin: 0;
@@ -1160,6 +1428,7 @@
         //  font-size: 28px;
         //}
       }
+
       a {
         color: #122c44;
         pointer-events: unset !important;
@@ -1167,14 +1436,17 @@
         text-decoration: underline;
       }
     }
+
     ul {
       margin: 0 -5px;
       justify-content: space-between;
+
       li {
         padding: 0 5px;
         list-style: none;
         text-align: center;
         position: relative;
+
         img {
           margin: 0 0 4px;
           //@media (min-width: 2560px) {
@@ -1184,6 +1456,7 @@
           //  margin-bottom: 10px;
           //}
         }
+
         small {
           position: absolute;
           left: 0;
@@ -1199,6 +1472,7 @@
           font-size: 12px;
           color: #122c44;
           font-weight: 700;
+
           //@media (min-width: 2560px) {
           //  font-size: 26px;
           //}
@@ -1213,10 +1487,12 @@
             //}
           }
         }
+
         .CircularProgressbar .CircularProgressbar-path {
           stroke-width: 5px;
           stroke: #01e994;
         }
+
         span {
           font-size: 12px;
           display: block;
@@ -1229,31 +1505,39 @@
       }
     }
   }
+
   .CircularProgressbar {
     background: #f9fafb;
     border-radius: 100%;
+
     //border: 1px solid #EFEFEF;
     @media (max-width: $breakpoint_laptop) {
       width: 80px;
     }
+
     .CircularProgressbar-text {
       display: none;
     }
+
     .CircularProgressbar-trail {
       stroke: #eaecf0;
     }
   }
 }
+
 .list-style-one {
   padding-left: 10px;
+
   @media (min-width: $breakpoint_mobile_portrait) and (max-width: $breakpoint_tablet) {
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   li {
     @media (min-width: $breakpoint_mobile_portrait) and (max-width: $breakpoint_tablet) {
       width: 50%;
     }
+
     color: #475467;
     line-height: 20px;
     position: relative;
@@ -1261,12 +1545,15 @@
     font-size: 16px;
     align-items: center;
     margin-bottom: 12px;
+
     @media (max-width: $breakpoint_tablet) {
       font-size: 14px;
     }
+
     &:last-child {
       margin-bottom: 0;
     }
+
     &:before {
       content: "";
       margin-right: 10px;
@@ -1278,19 +1565,23 @@
     }
   }
 }
+
 .text-list-one {
   ul {
     li {
       margin: 0 0 24px;
+
       figure {
         margin: 0 8px 0 0;
       }
+
       section {
         h3 {
           margin: 0 0 4px;
           font-size: 18px;
           line-height: 23px;
         }
+
         p {
           margin: 0;
           font-size: 16px;
@@ -1301,15 +1592,18 @@
     }
   }
 }
+
 .swiper {
   width: 100%;
   height: 100%;
+
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: bottom;
   }
+
   .swiper-button-next,
   .swiper-button-prev {
     width: 40px;
@@ -1319,6 +1613,7 @@
     border-radius: 100%;
     border: 1px solid #d0d5dd;
     box-shadow: 4px 4px 20px rgba(128, 128, 128, 0.15);
+
     &:after {
       font-size: 15px;
       line-height: unset;
@@ -1326,50 +1621,63 @@
       color: #122c44;
     }
   }
+
   .swiper-button-next {
     right: var(--swiper-navigation-sides-offset, 48px);
+
     @media (max-width: $breakpoint_tablet) {
       right: var(--swiper-navigation-sides-offset, 15px);
     }
   }
+
   .swiper-button-prev {
     left: var(--swiper-navigation-sides-offset, 48px);
+
     @media (max-width: $breakpoint_tablet) {
       left: var(--swiper-navigation-sides-offset, 15px);
     }
   }
+
   .swiper-button-next.swiper-button-disabled,
   .swiper-button-prev.swiper-button-disabled {
     opacity: 1;
+
     &:after {
       color: #d0d5dd;
     }
   }
 }
+
 .progressbar-counter {
   padding: 0;
   margin: 8px 0 12px;
+
   @media (max-width: $breakpoint_tablet) {
     padding: 0 10px;
   }
+
   //@media (min-width: 2560px) {
   //  margin-left: auto;
   //  margin-right: auto;
   //  max-width: 1600px;
   //}
-  & > ul {
+  &>ul {
     margin: 0 -8px;
+
     @media (max-width: $breakpoint_mobile_portrait) {
       margin: 0 -5px;
     }
-    & > li {
+
+    &>li {
       padding: 0 8px;
       width: 50%;
+
       @media (max-width: $breakpoint_mobile_portrait) {
         width: 100%;
         margin: 0 0 10px;
         padding: 0 5px;
       }
+
       &:last-child {
         section {
           ul {
@@ -1382,61 +1690,77 @@
           }
         }
       }
+
       section {
         width: 100%;
         background: #f9fafb;
         border-radius: 10px;
         padding: 8px 16px;
         height: 100%;
+
         @media (max-width: 1250px) {
           padding: 8px 12px;
         }
+
         @media (max-width: $breakpoint_mobile_portrait) {
           padding: 8px;
         }
+
         h5 {
           margin: 0 0 4px;
           font-size: 15px;
+
           @media (max-width: $breakpoint_mobile_portrait) {
             font-size: 10px;
             white-space: nowrap;
           }
+
           //@media (min-width: 2560px) {
           //  font-size: 24px;
           //}
         }
+
         ul {
           margin: 0 -11px;
+
           @media (max-width: $breakpoint_mini_laptop) {
             margin: 0 -5px;
           }
+
           li {
             display: flex;
             align-items: center;
             width: 50%;
             padding: 0 11px;
             line-height: 20px;
+
             @media (max-width: $breakpoint_mini_laptop) {
               padding: 0 5px;
             }
+
             @media (max-width: $breakpoint_tablet) {
               width: 100%;
             }
+
             h6 {
               margin: 0;
               font-weight: 400;
               font-size: 13px;
+
               @media (max-width: 1250px) {
                 font-size: 12px;
               }
+
               @media (max-width: $breakpoint_big_tablet) {
                 font-size: 10px;
               }
+
               //@media (min-width: 2560px) {
               //  font-size: 22px;
               //}
             }
-            & > span {
+
+            &>span {
               font-size: 11px;
               display: flex;
               align-items: center;
@@ -1444,10 +1768,12 @@
               width: 100%;
               justify-content: flex-end;
               max-width: 79px;
+
               @media (max-width: $breakpoint_mobile_portrait) {
                 max-width: 67px;
                 font-size: 10px;
               }
+
               //@media (min-width: 2560px) {
               //  font-size: 22px;
               //  max-width: 130px;
@@ -1461,9 +1787,11 @@
                 display: flex;
                 position: relative;
                 overflow: hidden;
+
                 @media (max-width: $breakpoint_mobile_portrait) {
                   width: 35px;
                 }
+
                 //@media (min-width: 2560px) {
                 //  width: 65px;
                 //  height: 7px;
@@ -1484,25 +1812,30 @@
     }
   }
 }
+
 .scroll-list {
   overflow: auto;
   max-height: 370px;
   margin-top: 40px;
   margin-right: -21px;
   padding-right: 21px;
+
   &::-webkit-scrollbar {
     width: 6px;
   }
+
   &::-webkit-scrollbar-thumb {
     background-color: #d0d5dd;
     border-radius: 10px;
   }
+
   li {
     display: flex;
     text-align: left;
     color: #122c44;
     font-size: 15px;
     line-height: 25px;
+
     span {
       width: 47%;
       color: #98a2b3;
@@ -1511,15 +1844,18 @@
     }
   }
 }
+
 .button-box {
   padding: 16px 0 30px;
   position: relative;
-  & > div {
+
+  &>div {
     position: relative;
     z-index: 1;
     width: 100%;
     text-align: center;
   }
+
   &:before {
     position: absolute;
     content: "";
@@ -1530,29 +1866,35 @@
     width: 365px;
     pointer-events: none;
     left: 0;
+
     @media (max-width: $breakpoint_tablet) {
       margin: 0 -28px;
       width: 110%;
     }
+
     @media (max-width: $breakpoint_mobile_portrait) {
       margin: 0 -20px;
       width: 600px;
     }
   }
-  & ~ figure {
+
+  &~figure {
     margin: 12px 0 0;
     text-align: center;
   }
+
   h4 {
     font-size: 24px;
     margin: 0 0 32px;
     display: flex;
     align-items: self-start;
     width: 100%;
+
     span {
       font-weight: 700;
       margin-left: auto;
       line-height: 1.2;
+
       small {
         display: block;
         font-size: 16px;
@@ -1561,24 +1903,30 @@
       }
     }
   }
+
   a {
     font-weight: 700;
     text-decoration: underline;
   }
 }
+
 .mobile_list {
   display: none !important;
 }
+
 @media (max-width: $breakpoint_mobile_portrait) {
+
   .intention_list,
   .intention-wrap {
     border: 1px solid #d0d5dd;
     margin-bottom: 20px;
     border-radius: 30px;
+
     li {
       &.lab {
         display: none !important;
       }
+
       &.mobile_list {
         display: flex !important;
         flex-direction: row !important;
@@ -1588,31 +1936,38 @@
         min-height: 55px;
         margin-bottom: 0 !important;
         position: relative;
+
         i {
           position: absolute;
           right: 20px;
           top: 18px;
           font-size: 20px;
         }
-        & > span {
+
+        &>span {
           color: #122c44;
           font-size: 15px;
           margin: 4px 5px 4px 0;
         }
-        & ~ li {
+
+        &~li {
           display: none !important;
           margin-bottom: 25px !important;
         }
+
         &.show_list {
           margin-bottom: 10px !important;
-          & ~ li {
+
+          &~li {
             &.lab {
               display: none !important;
             }
+
             display: flex !important;
           }
         }
       }
+
       label {
         span {
           border: none !important;
@@ -1622,23 +1977,28 @@
     }
   }
 }
+
 .check-box {
   margin: 0 !important;
   position: relative;
   font-weight: 400 !important;
   cursor: pointer;
+
   input[type="checkbox"] {
     position: absolute;
     left: 0;
     top: 0;
     visibility: hidden;
-    &:checked ~ span {
+
+    &:checked~span {
       border: 2px solid var(--theme-color);
+
       &:before {
         background: url("../../assets/images/checkedIcon.svg");
       }
     }
   }
+
   span {
     display: flex;
     align-items: center;
@@ -1646,10 +2006,12 @@
     border-radius: 30px;
     height: 55px;
     padding: 0 26px;
+
     @media (max-width: $breakpoint_mini_laptop) {
       padding: 0 15px;
       font-size: 13px;
     }
+
     &:before {
       content: "";
       width: 20px;
@@ -1658,38 +2020,46 @@
       margin-right: 8px;
       display: flex;
     }
+
     strong {
       margin-left: auto;
     }
   }
 }
+
 .frame-image {
   border-radius: 5px;
   overflow: hidden;
   display: flex;
   width: 100%;
 }
+
 .react-dropdown-select-input {
   display: none;
 }
+
 .trustpilot-list {
   margin-bottom: 30px;
+
   h6 {
     margin: 0 0 13px;
     font-weight: 600;
     font-size: 14px;
   }
+
   ul {
     li {
       display: flex;
       font-size: 14px;
       color: #122c44;
       font-weight: 500;
+
       .progressbar-points {
         color: #122c44;
         display: flex;
         margin-left: auto;
         align-items: center;
+
         .base {
           margin-right: 8px;
           width: 130px;
@@ -1697,6 +2067,7 @@
           background: #d0d5dd;
           display: block;
           position: relative;
+
           &:before,
           &:after,
           &:before {
@@ -1709,9 +2080,11 @@
             background: #d0d5dd;
             z-index: 1;
           }
+
           &:after {
             left: 80%;
           }
+
           .base-bar {
             position: absolute;
             left: 0;
@@ -1719,12 +2092,14 @@
             background: #7c7c7c;
             height: 100%;
           }
+
           .base-points {
             position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
+
             &:before,
             &:after {
               content: "";
@@ -1735,6 +2110,7 @@
               height: 100%;
               background: #d0d5dd;
             }
+
             &:after {
               left: 40%;
             }
@@ -1744,6 +2120,7 @@
     }
   }
 }
+
 button.link {
   font-weight: 700;
   display: inline-block;

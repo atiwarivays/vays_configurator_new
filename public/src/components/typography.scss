@@ -1,0 +1,14 @@
+@import "../assets/scss/mixin";
+.typography-wrapper {
+  padding: 100px 0 140px;
+  ul {
+    margin: 0 -10px;
+    li {
+      width: 25%;
+      padding: 0 10px;
+      @media (max-width: $breakpoint_mobile_portrait) {
+        width: 100%;
+      }
+    }
+  }
+}
