@@ -1,0 +1,47 @@
+[
+  {
+    "question": "",
+    "answers": [
+      {
+        "option": "",
+        "detail": " "
+      },
+      {
+        "option": "2. Montage und Installation",
+        "detail": "Ihr Installateurteam verdrahtet, montiert und programmiert die Smart Home Komponenten und richtet Automatisierungen in der Zentrale ein."
+      },
+      {
+        "option": "3. Inbetriebnahme und Einweisung",
+        "detail": "Im Anschluss wird Ihr Installateur Ihr System in Betrieb nehmen und Sie in einer ausführlichen Führung in das System einweisen. "
+      },
+      {
+        "option": "4. Willkommen in Ihrem Smart Home",
+        "detail": "Wir wünschen Ihnen viel Freude mit Ihrem neuen Smart Home. Bei auftretenden Problemen, Fragen oder Gewährleistungsfällen können Sie sich selbstverständlich jederzeit bei uns melden."
+      }
+    ]
+  },
+  {
+    "question": "Welche Vorbereitungen für die Installation müssen gegeben sein?",
+    "answers": [
+      {
+        "detail": "Nach Beauftragung wird sich Ihr zugewiesener Projektmanager zur Vorbereitung der Installation bei Ihnen melden und Sie durch die notwendigen bauseiten Rahmenbedingungen führen. Diese können Sie hier im Vorfeld einsehen:"
+      }
+    ]
+  },
+  {
+    "question": "Kann ich meine Bestellung ändern und/oder erweitern?",
+    "answers": [
+      {
+        "detail": "Selbstverständlich können Sie Ihre Bestellung bis zu 2 Wochen vor dem geplanten Installationstermin ändern und/oder erweitern. Sprechen Sie hierzu einfach Ihren Ansprechpartner an."
+      }
+    ]
+  },
+  {
+    "question": "Kann ich meine Bestellung stornieren?",
+    "answers": [
+      {
+        "detail": "Selbstverständlich, können Sie Ihre Bestellung stornieren. Jenachdem wie kurzfristig Sie vor der bereits terminlich fixierten Installation stornieren möchten, können die Stornierungsbedingungen abweichen. Sehen Sie daher unsere AGBs ein: www.vays.de/agb"
+      }
+    ]
+  }
+]

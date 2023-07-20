@@ -1,0 +1,87 @@
+@import "../../../assets/scss/mixin";
+.modal-smart-area {
+  ul {
+    margin: 0 -10px;
+    li {
+      padding: 0 10px;
+      width: 33.333%;
+      margin: 0 0 25px;
+      @media (max-width: $breakpoint_mobile_portrait) {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+      .smart-content {
+        background: var(--white-color);
+        border: 1px solid #EAECF0;
+        box-shadow: 4px 4px 10px -4px rgba(128, 128, 128, 0.15);
+        border-radius: 5px;
+        flex-direction: column;
+        position: relative;
+        @include transition;
+        @media (max-width: $breakpoint_mobile_portrait) {
+          flex-direction: row;
+        }
+        &:hover,.active {
+          .check {opacity: 1;}
+          border: 1px solid var(--theme-color);
+          section {
+            background: #EBFFF7;
+          }
+        }
+        .check {
+          position: absolute;
+          right: -1px;
+          top: -1px;
+          opacity: 0;
+          cursor: pointer;
+          @include transition;
+          @media (max-width: $breakpoint_mobile_portrait) {
+            left: -1px;
+            right: auto;
+          }
+        }
+        figure {
+          margin: 0;
+          @media (max-width: $breakpoint_mobile_portrait) {
+            width: 111px;
+            flex: 0 0 111px;
+            display: flex;
+            align-items: center;
+          }
+          img { max-width: 100%;}
+        }
+        section {
+          background: #F9FAFB;
+          min-height: 135px;
+          padding: 18px 10px 14px 15px;
+          @media (max-width: $breakpoint_mobile_portrait) {
+            min-height: auto;
+          }
+          h6 {
+            margin: 0 0 8px;
+            text-align: center;
+            @media (max-width: $breakpoint_mobile_portrait) {
+              text-align: left;
+            }
+          }
+          p {
+            font-size: 14px;
+            color: #475467;
+            margin: 0;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+.react-tooltip {
+  width: 270px !important;
+  background: #323232 !important;
+  z-index: 9999;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+

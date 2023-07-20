@@ -5,6 +5,8 @@ import listIcon2 from "../../../../assets/images/icon2.svg";
 import listIcon3 from "../../../../assets/images/icon3.svg";
 import MultiDatePicker from "react-multi-date-picker";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-scroll";
+import downArrow from "../../../../assets/images/down-arrow-1.svg";
 
 import { priceIncludedList, wartungList, german_language } from "../../../../utils/constants/constants";
 import {
@@ -315,7 +317,7 @@ const InstallationProcess = (props) => {
       )}
 
       <h2 className="sidebar-title">Garantien</h2>
-      <aside className="text-list-one">
+      <aside className="side-widgets text-list-one">
         <ul className="list-none flex column-direction">
           {garantienList.map(({ title, listIcon, description }, index) => {
             return (
@@ -337,6 +339,11 @@ const InstallationProcess = (props) => {
           </li>
         </ul>
       </aside>
+      <div className="down-arrow">
+        <a href="#">
+          <img src={downArrow} alt="downArrow" />
+        </a>
+      </div>
     </>
   );
 };
