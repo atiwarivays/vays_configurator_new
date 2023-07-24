@@ -14,8 +14,8 @@ import icon13 from "../../../assets/images/13.svg";
 import icon14 from "../../../assets/images/14.svg";
 import icon15 from "../../../assets/images/11.1.svg";
 import icon16 from "../../../assets/images/13.1.svg";
-import { getFunktionenActiveIndexes, getHersteller } from "../../../utils/store-2/konfiguration-slice";
-import { useSelector } from "react-redux";
+import { getFunktionenActiveIndexes, getHersteller , konfigurationActions} from "../../../utils/store-2/konfiguration-slice";
+import { useSelector, useDispatch } from "react-redux";
 
 const FunctionImageComponent = () => {
   const activeIndexes = useSelector(getFunktionenActiveIndexes);
@@ -51,13 +51,34 @@ const FunctionImageComponent = () => {
     if (activeIndexes.includes(index)) return "active";
     else return "inactive";
   };
+  const dispatch = useDispatch();
+  const changeIconClass = event => {
+    let spanId = event.currentTarget.id;
+    const spanArr = spanId.split("_");
+    // alert(spanArr[1]);
+    //  alert(event.currentTarget.id+'-=='+spanArr[1]);
+    if(event.currentTarget.classList.contains('inactive')){
+      event.currentTarget.classList.remove('inactive');
+      event.currentTarget.classList.add('active')
+      
+      dispatch(konfigurationActions.updateSingleFunktion(spanArr[1]));
+    }
+      else{
+      event.currentTarget.classList.remove('active');
+      event.currentTarget.classList.add('inactive');
+       dispatch(konfigurationActions.updateSingleFunktion(spanArr[1]));
+    }
+};
   return (
     <figure>
       <div className="scale-image img_one" />
       <figcaption>
         {filteredControlOptions.map(({ icon, id }, index) => {
           return (
-            <span className={`${getClassName(id)} control-options opo-${id + 1}`} key={index}>
+            <span className={`${getClassName(id)} control-options opo-${id + 1}`} key={index} 
+            id={`span_${id}`} 
+            onClick={changeIconClass} 
+            >
               <img src={icon} alt="icon" />
             </span>
           );

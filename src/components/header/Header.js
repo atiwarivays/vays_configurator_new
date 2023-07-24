@@ -61,6 +61,15 @@ export default function Header() {
   const dropDownOpenFun = () => {
     setIsOpenDropDown(!isOpenDropDown);
   };
+
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch('https://api.vays.de/devapi/v1/visitcount')
+      .then(response => response.json())
+      .then(json => setData(json))
+      .catch(error => console.error(error));
+  }, []);
+  
   return (
     <>
       {openIndentModal === true && (
@@ -101,7 +110,8 @@ export default function Header() {
 
             <ul className="flex list-none">
               <li className="flex items-center gap-10 m-reverse">
-                <label className="simple-label">40</label>
+              
+                 <label className="simple-label">{data ? data.visit_count : 'Loading...'}</label>
                 <span>Konfigurationen heute</span>
               </li>
             </ul>
