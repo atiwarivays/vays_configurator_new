@@ -8,6 +8,8 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import React from "react";
 import { formatGermanPrice } from "../../../../utils/constants/api";
+import { useState } from "react";
+import Loader from "../../../../components/modals/loader/Loader";
 
 export default function SmartSidebar({
   finalDataObject,
@@ -15,6 +17,7 @@ export default function SmartSidebar({
   faqOpenModal,
 }) {
   //  console.log(finalDataObject);
+  const [isLoading, setLoading] = useState(false);
 
   return (
     <>
@@ -27,8 +30,14 @@ export default function SmartSidebar({
           <Link
             className="pdf-down"
             to={finalDataObject.quotation_pdf_url}
-            target="_blank"
+            onClick={() => {
+              setLoading(true);
+              setTimeout(function () {
+                setLoading(false);
+              }, 15000);
+            }}
           >
+            {isLoading ? <Loader /> : null}
             PDF herunterladen <img src={download} alt="download" />
           </Link>
           {finalDataObject.installationsservice === "Installation" && (
@@ -42,18 +51,18 @@ export default function SmartSidebar({
 
           <ul className="scroll-list flex column-direction list-none">
             <li>
-              Installationsort <span>{finalDataObject.installationsort}</span>
+              Objekt <span>{finalDataObject.installationsort}</span>
             </li>
             <li>
-              Bauvorhaben <span>{finalDataObject.bauvorhaben}</span>
+              Projekt <span>{finalDataObject.bauvorhaben}</span>
             </li>
             <li>
-              Bauphase <span>{finalDataObject.bauphase}</span>
+              Phase <span>{finalDataObject.bauphase}</span>
             </li>
             <li>
               Raume <span>{finalDataObject.raume}</span>
             </li>
-            <li>
+            {/* <li>
               Intention
               <span>
                 {finalDataObject.intentions.map((data, index) => (
@@ -63,7 +72,7 @@ export default function SmartSidebar({
                   </React.Fragment>
                 ))}
               </span>
-            </li>
+            </li> */}
             <li>
               System <span>{finalDataObject.hersteller}</span>
             </li>
