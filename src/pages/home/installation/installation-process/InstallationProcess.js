@@ -318,7 +318,7 @@ const InstallationProcess = (props) => {
 
       <h2 className="sidebar-title">Garantien</h2>
       <aside className="side-widgets text-list-one">
-        <ul className="list-none flex column-direction">
+        <ul className="list-none flex column-direction garantien-list">
           {garantienList.map(({ title, listIcon, description }, index) => {
             return (
               <li key={`lis-${index}`} className="flex items-start">

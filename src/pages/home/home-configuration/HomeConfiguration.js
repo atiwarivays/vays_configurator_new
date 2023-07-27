@@ -63,7 +63,10 @@ const HomeConfiguration = () => {
           </div>
         </div>
         <div className="sidebar-options">
-          <ConfigurationForm />
+          <ConfigurationForm openModal={() => {
+            setOpenIntention(!openIntention);
+          }}
+          />
           {/* <IntentionForm
             openModal={() => {
               setOpenIntention(!openIntention);

@@ -3,7 +3,7 @@ import "./loader.scss";
 
 export default function Loader() {
   return (
-    <div className="loader_wrapper">
+    <div className="loader_wrapper">      
       <img src={loaderGif} alt="loaderGif" />
     </div>
   );
