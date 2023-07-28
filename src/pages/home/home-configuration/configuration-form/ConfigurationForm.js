@@ -1,5 +1,4 @@
 import Select from "react-dropdown-select";
-import { useRef } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import {
   getBauphase,
@@ -8,10 +7,9 @@ import {
   getRaume,
   konfigurationActions,
 } from "../../../../utils/store-2/konfiguration-slice";
-import { Link } from "react-scroll";
 import downArrow from "../../../../assets/images/down-arrow-1.svg";
 
-const ConfigurationForm = () => {
+const ConfigurationForm = ({ openModal }) => {
   const dispatch = useDispatch();
   const bauphaseValues = useSelector(getBauphase);
   const installationsortValues = useSelector(getInstallationsort);
@@ -87,6 +85,11 @@ const ConfigurationForm = () => {
             />
           </li>
         </ul>
+        <div className="content-justify-center flex items-center">
+          <button className="simple-btn" onClick={openModal}>
+            Details zu den Vorteilen
+          </button>
+        </div>
       </aside>
       <div className="down-arrow">
         <a href="#">

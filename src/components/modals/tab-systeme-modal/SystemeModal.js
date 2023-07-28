@@ -17,7 +17,7 @@ export const SystemeModal = (props) => {
     {
       icon: m1,
       subtitle: "Modernste Technologie",
-      title: "Bosch",
+      title: "BOSCH",
       description:
         "Der namenhafte Hersteller Bosch setzt mit der neuesten Generation auf den neuen innovativen Verbindungs-standard Matter und hochwertige Komponenten.",
       listTitle: "Verbindungsstandards",

@@ -20,6 +20,7 @@ export default function Header() {
   const [openFaqModal, setOpenFaqModal] = useState(false);
   const [openIndentModal, setOpenIndentModal] = useState(false);
   const [hasOpenedModal, setHasOpenedModal] = useState(false);
+  const [openConfigurationModal, setOpenConfigurationModal] = useState(false);
 
   const handleClickOnLink = () => {
     if (!hasOpenedModal) {
@@ -35,6 +36,14 @@ export default function Header() {
       document.body.style.overflow = "unset";
     }
   }, [openFaqModal]);
+
+  useEffect(() => {
+    if (openConfigurationModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [openConfigurationModal]);
   const [scroll, setScroll] = useState(false);
 
   const handleClick = () => {
@@ -97,12 +106,16 @@ export default function Header() {
         <div className="container">
           <div className="header-wrapper flex content-justify-between items-center">
             {window.innerWidth <= 768 ? (
-              <Link to="/" onClick={handleClickOnLink}>
+              <Link to="/" onClick={() => {
+                setOpenConfigurationModal(true);
+              }}>
                 VAYS
                 <img src={logo} alt="logo" />
               </Link>
             ) : (
-              <Link to="/">
+              <Link to="/" onClick={() => {
+                setOpenConfigurationModal(true);
+              }}>
                 VAYS
                 <img src={logo} alt="logo" />
               </Link>
@@ -183,6 +196,24 @@ export default function Header() {
           modalTitle="Häufige Fragen"
           closeModal={() => {
             setOpenFaqModal(!openFaqModal);
+          }}
+        />
+      )}
+      {openConfigurationModal === true && (
+        <ConfigurationModal
+          modalTitle="Konfiguration speichern"
+          button_text="Speichern"
+          bottomLineIntro={[
+            <p>
+              Indem Sie auf “Speichern” klicken, akzeptieren Sie unsere{" "}
+              <Link to="https://vays.de/datenschutz/" target="_blank">
+                Datenschutzbedingungen
+              </Link>
+              .
+            </p>,
+          ]}
+          closeModal={() => {
+            setOpenConfigurationModal(!openConfigurationModal);
           }}
         />
       )}

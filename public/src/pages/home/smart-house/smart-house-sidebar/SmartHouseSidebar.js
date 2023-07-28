@@ -30,6 +30,7 @@ const SmartHouseSidebar = (props) => {
                 <span>ca. {installationsdauer} Tage</span>
               </>
             )}
+            <h6>Installationsdauer</h6><span>ca. 3 Tage</span>
             <button onClick={props.warenkorbModal} className="submit-button">
               Weiter zur Übersicht
             </button>
@@ -88,7 +89,7 @@ const SmartHouseSidebar = (props) => {
                 <iframe
                   width="400"
                   height="185"
-                  src="https://www.youtube.com/embed/SeXQ8vnlXQc"
+                  src="https://www.youtube.com/embed/O9FJSC5i9KE"
                   title="Erfahrungsbericht über VAYS von Tim Kroll"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

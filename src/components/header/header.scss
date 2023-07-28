@@ -27,6 +27,13 @@
 
     .m-reverse {
       flex-direction: row-reverse;
+
+
+      @media (max-width: $breakpoint_mobile_portrait) {
+        span {
+          font-size: 10px !important;
+        }
+      }
     }
   }
 
@@ -152,10 +159,6 @@
           @media (max-width: $breakpoint_laptop) {
             font-size: 14px;
           }
-
-          @media (max-width: $breakpoint_mobile_portrait) {
-            font-size: 10px;
-          }
         }
 
         section {
@@ -230,6 +233,7 @@
       padding: 16px 24px;
       @include transition;
 
+
       img {
         margin-right: 16px !important;
       }
@@ -291,4 +295,10 @@
   border: none;
   background: transparent;
   padding: 0;
+}
+
+@media (max-width: $breakpoint_mobile_portrait) {
+  #main_header .header-wrapper>ul li .dropdown-wrap section {
+    display: flex;
+  }
 }

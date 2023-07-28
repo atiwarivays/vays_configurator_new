@@ -168,7 +168,7 @@
     }
 
     .active {
-      pointer-events: none;
+      cursor: pointer;
 
       &~.content-side {
         opacity: 1;
@@ -496,6 +496,7 @@
                   width: 100%;
                 }
               }
+
             }
           }
 
@@ -528,11 +529,19 @@
             }
           }
 
+          &.garantien-list {
+            >li {
+              flex-direction: row;
+            }
+
+          }
+
           &>li {
             display: flex;
             flex-direction: column;
             margin-bottom: 24px;
             position: relative;
+
 
             @media (min-width: $breakpoint_mobile_portrait) and (max-width: $breakpoint_tablet) {
               width: 50%;
@@ -627,6 +636,7 @@
 }
 
 .control-options {
+  cursor: pointer;
   background: #fefefe;
   display: flex;
   width: 50px;
