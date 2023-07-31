@@ -27,7 +27,6 @@ const HomeConfiguration = () => {
     }
   }, [openTabSystemeModal]);
 
-
   useEffect(() => {
     const handleWindowResize = () => {
       if (window.innerWidth <= 2550) {

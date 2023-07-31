@@ -62,7 +62,7 @@
       white-space: nowrap;
 
       @media (max-width: $breakpoint_mobile_portrait) {
-        font-size: 24px;
+        font-size: 20px;
       }
 
       img {
@@ -97,7 +97,9 @@
 
       @media (max-width: $breakpoint_mobile_portrait) {
         &.active_drop {
-          li:first-child {
+
+          li:first-child,
+          li:nth-child(2) {
             display: none
           }
 
@@ -120,6 +122,7 @@
         @media (max-width: $breakpoint_mobile_portrait) {
           margin: 0 0 0 10px;
           position: inherit;
+          gap: 5px;
 
           &>a>span {
             display: none
@@ -139,7 +142,8 @@
           margin-right: 16px;
 
           @media (max-width: $breakpoint_mobile_portrait) {
-            margin-right: 6px;
+            margin-right: 2px;
+            max-width: 18px;
           }
 
           &.select-arrow {

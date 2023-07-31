@@ -8,11 +8,11 @@ export default function FooterPrice() {
     <div className="price-wrapper flex items-start">
       <h2>
         Gesamtpreis
-        <small>inkl. MwSt, zzgl. {formatGermanPrice(totalPrice * .15)} Fördermittelerstattung</small>
+        <small>inkl. MwSt, zzgl. 150€ Fördermittelerstattung</small>
       </h2>
       <span>
         <small className="discount">{formatGermanPrice(totalPrice * 1.25)}</small>
-        {formatGermanPrice(totalPrice)} <small className="mobile">inkl. MwSt, zzgl. {formatGermanPrice(totalPrice * .15)} Fördermittelerstattung </small>
+        {formatGermanPrice(totalPrice)} <small className="mobile">inkl. MwSt, zzgl. 150€ Fördermittelerstattung </small>
       </span>
     </div>
   );
