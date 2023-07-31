@@ -9,7 +9,6 @@ import { Navigation } from "swiper";
 import React from "react";
 import { formatGermanPrice } from "../../../../utils/constants/api";
 import { useState } from "react";
-import Loader from "../../../../components/modals/loader/Loader";
 
 export default function SmartSidebar({
   finalDataObject,
@@ -28,7 +27,7 @@ export default function SmartSidebar({
       <aside className="side-widgets smart-house">
         <section>
           <Link
-            className="pdf-down"
+            className={`pdf-down ${isLoading ? "loader-btn disabled" : ''}`}
             to={finalDataObject.quotation_pdf_url}
             onClick={() => {
               setLoading(true);
@@ -37,7 +36,7 @@ export default function SmartSidebar({
               }, 15000);
             }}
           >
-            {isLoading ? <Loader /> : null}
+            {/* {isLoading ? "Bitte warten Sie. Ihr Angebot wird generiert" : null} */}
             PDF herunterladen <img src={download} alt="download" />
           </Link>
           {finalDataObject.installationsservice === "Installation" && (
@@ -162,7 +161,7 @@ export default function SmartSidebar({
         <figure className="">
           <img src={pay} alt="pay" />
         </figure>
-      </aside>
+      </aside >
       <h2 className="sidebar-title">Bewertungen</h2>
       <aside className="side-widgets trustpilot">
         <img src={trustpilotScreeShot} alt="trustpilotScreeShot" />
