@@ -78,7 +78,7 @@ export default function Header() {
       .then(json => setData(json))
       .catch(error => console.error(error));
   }, []);
-  
+
   return (
     <>
       {openIndentModal === true && (
@@ -121,15 +121,17 @@ export default function Header() {
               </Link>
             )}
 
-            <ul className="flex list-none">
+            {/* <ul className="flex list-none">
               <li className="flex items-center gap-10 m-reverse">
-              
                  <label className="simple-label">{data ? data.visit_count : 'Loading...'}</label>
                 <span>Konfigurationen heute</span>
               </li>
-            </ul>
+            </ul> */}
             <ul className={`flex list-none right-section ${isOpenDropDown ? "active_drop" : ""}`}>
-
+              <li className="flex items-center gap-10 m-reverse">
+                <label className="simple-label">{data ? data.visit_count : 'Loading...'}</label>
+                <span>Konfigurationen heute</span>
+              </li>
               <li>
                 <button
                   className="transparent-button flex items-center"

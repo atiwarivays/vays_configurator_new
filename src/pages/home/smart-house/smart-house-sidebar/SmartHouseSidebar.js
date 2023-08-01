@@ -96,19 +96,19 @@ const SmartHouseSidebar = (props) => {
                 ></iframe>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <div className="frame-image">
                 <iframe
                   width="400"
                   height="185"
-                  src="https://www.youtube.com/embed/xZeAF3MNnyc"
+                  src="https://www.youtube.com/embed/O9FJSC5i9KE"
                   title="Erfahrungsbericht über VAYS   von Familie Jansen"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
               </div>
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
         </div>
       </aside>

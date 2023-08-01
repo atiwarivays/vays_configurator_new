@@ -5,7 +5,6 @@ import listIcon2 from "../../../../assets/images/icon2.svg";
 import listIcon3 from "../../../../assets/images/icon3.svg";
 import MultiDatePicker from "react-multi-date-picker";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-scroll";
 import downArrow from "../../../../assets/images/down-arrow-1.svg";
 
 import { priceIncludedList, wartungList, german_language } from "../../../../utils/constants/constants";

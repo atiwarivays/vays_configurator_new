@@ -55,6 +55,8 @@ const FunctionImageComponent = () => {
   const changeIconClass = event => {
     let spanId = event.currentTarget.id;
     const spanArr = spanId.split("_");
+    // alert(spanArr[1]);
+    //  alert(event.currentTarget.id+'-=='+spanArr[1]);
     if(event.currentTarget.classList.contains('inactive')){
       event.currentTarget.classList.remove('inactive');
       event.currentTarget.classList.add('active')

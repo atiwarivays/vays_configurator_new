@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import trustpilotScreeShot from "../../../../assets/images/trustpilotScreeShot.jpg";
 import download from "../../../../assets/images/download.svg";
+import btnLoader from "../../../../assets/images/loader2.gif"
 import pay from "../../../../assets/images/pay.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -9,7 +10,6 @@ import { Navigation } from "swiper";
 import React from "react";
 import { formatGermanPrice } from "../../../../utils/constants/api";
 import { useState } from "react";
-import Loader from "../../../../components/modals/loader/Loader";
 
 export default function SmartSidebar({
   finalDataObject,
@@ -28,17 +28,17 @@ export default function SmartSidebar({
       <aside className="side-widgets smart-house">
         <section>
           <Link
-            className="pdf-down"
+            className={`pdf-down ${isLoading ? "loader-btn pdf-loader disabled" : ''}`}
             to={finalDataObject.quotation_pdf_url}
             onClick={() => {
               setLoading(true);
               setTimeout(function () {
                 setLoading(false);
-              }, 15000);
+              }, 14000);
             }}
           >
-            {isLoading ? <Loader /> : null}
-            PDF herunterladen <img src={download} alt="download" />
+            {isLoading ? (<div class="pdf-loader-text"><p>Bitte warten Sie. Ihr Angebot wird generiert</p></div>) :
+              (<p>PDF herunterladen <img src={download} alt="download" /></p>)}
           </Link>
           {finalDataObject.installationsservice === "Installation" && (
             <>
@@ -162,7 +162,7 @@ export default function SmartSidebar({
         <figure className="">
           <img src={pay} alt="pay" />
         </figure>
-      </aside>
+      </aside >
       <h2 className="sidebar-title">Bewertungen</h2>
       <aside className="side-widgets trustpilot">
         <img src={trustpilotScreeShot} alt="trustpilotScreeShot" />

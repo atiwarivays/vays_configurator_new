@@ -104,7 +104,7 @@ const SmartHouse = () => {
       )}
       {openExpertAdviceModal === true && (
         <ConfigurationModal
-          modalTitle="Kostenlose Fachberatung "
+          modalTitle="Kostenlose Fachberatung"
           button_text="Anruf anfordern"
           modalDescription={[<p>Ihr persönlicher Smart Home Experte meldet sich schnellstmöglich bei Ihnen.</p>]}
           bottomLineIntro={[

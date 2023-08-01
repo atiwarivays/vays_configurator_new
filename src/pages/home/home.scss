@@ -168,7 +168,7 @@
     }
 
     .active {
-      cursor: pointer;
+      cursor: pointer;
 
       &~.content-side {
         opacity: 1;
@@ -455,6 +455,8 @@
                 display: inline-block;
                 margin-bottom: 15px;
                 text-decoration: underline;
+                padding: 18px 16px 10px;
+                // border-radius: 30px;
 
                 img {
                   margin: 4px 0 0;
@@ -628,6 +630,7 @@
 
   @media (max-width: $breakpoint_mobile_portrait) {
     padding: 6px 10px;
+    font-size: 10px;
   }
 }
 
@@ -636,7 +639,7 @@
 }
 
 .control-options {
-  cursor: pointer;
+  cursor: pointer;
   background: #fefefe;
   display: flex;
   width: 50px;
