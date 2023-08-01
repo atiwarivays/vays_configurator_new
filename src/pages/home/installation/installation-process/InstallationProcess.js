@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-dropdown-select";
 import listIcon1 from "../../../../assets/images/icon1.svg";
 import listIcon2 from "../../../../assets/images/icon2.svg";
@@ -89,6 +89,17 @@ const InstallationProcess = (props) => {
     },
   ];
 
+  
+  const [checkboxCount, setItems] = useState([]);
+
+useEffect(() => {
+  const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
+  if (checkboxCount) {
+   setItems(checkboxCount);
+  }
+}, []);
+// alert(checkboxCount);
+
   //For default values
   const [wartungDefaultValue] = useState(laufzeitWartungsservice.options[laufzeitWartungsservice.selectedOption].label);
   const [gewährleistungDefaultValue] = useState(
@@ -103,10 +114,20 @@ const InstallationProcess = (props) => {
   const [fordermittelServiceDefaultValue] = useState(
     fordermittelService.options[fordermittelService.selectedOption].label
   );
-  const [integrationVorhandenerSystemeDefaultValue] = useState(
-    integrationVorhandenerSysteme.options[integrationVorhandenerSysteme.selectedOption].label
-  );
-
+  var integrationDefaultValue = 'Keine Integration';
+  if(checkboxCount > 0){
+    integrationDefaultValue = '3 Integrationen';
+  }
+  if(checkboxCount > 3){
+    integrationDefaultValue = 'Unbegrenzt Integrationen';
+  }
+  const [integrationVorhandenerSystemeDefaultValue] = useState(integrationDefaultValue);
+  
+  integrationVorhandenerSysteme.options.map((item) => { 
+    if(integrationDefaultValue == item.label){
+      integrationDefaultValue = integrationDefaultValue.concat("      ", item.included)
+    }
+  });
   return (
     <>
       <h2 className="sidebar-title">Installation</h2>
@@ -194,13 +215,13 @@ const InstallationProcess = (props) => {
             <li>
               <label htmlFor="">Integration vorhandener Systeme</label>
               <Select
-                options={integrationVorhandenerSysteme.options.map((item) => ({
+                options={integrationVorhandenerSysteme.options.map((item) => ({ 
                   label: (
                     <div className="heim-container">
                       <p
                         className={item.label === "Unbegrenzt Integrationen" ? "heim-name-Integrationen" : "heim-name"}
                       >
-                        {item.label}
+                        {item.label} 
                       </p>
                       <p className="price">{item.included}</p>
                     </div>
@@ -208,7 +229,8 @@ const InstallationProcess = (props) => {
                   value: item.value,
                 }))}
                 onChange={handleSelectChange("vorhandener")}
-                values={[{ label: integrationVorhandenerSystemeDefaultValue, value: 0 }]}
+                //  values={[{ label: integrationVorhandenerSystemeDefaultValue, value: 0 }]}
+                values={[{ label: integrationDefaultValue, value: 0 }]}
               />
             </li>
             <li className="content-justify-center items-center">
