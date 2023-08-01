@@ -42,7 +42,7 @@ export default function UserLayout() {
                         setOpenIndentModal(!openIndentModal);
                     }}
                 />
-            )}
+            )} 
             <Header/>
             <Outlet/>
             <Footer/>

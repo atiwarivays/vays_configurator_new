@@ -25,6 +25,7 @@ import OutsideClickHandler from "react-outside-click-handler";
 
 const SystemIntegratedModal = (props) => {
   let [count, setCount] = useState(0);
+  let [checkboxCount, setCheckbox] = useState(0);
 
   const IntegratedDataList = [
     {
@@ -88,13 +89,31 @@ const SystemIntegratedModal = (props) => {
     },
   ];
 
+  function countcheckbox(e){
+    // alert(e.target.value);
+    if (e.target.checked) {
+      checkboxCount = checkboxCount + 1;
+      setCheckbox(checkboxCount); 
+    }else{
+      checkboxCount = checkboxCount - 1;
+      setCheckbox(checkboxCount); 
+    }
+      
+  }
+  localStorage.setItem('checkboxCount', JSON.stringify(checkboxCount));
+  // alert(checkboxCount);
+  // console.log(checkboxCount);
   function incrementCount() {
     count = count + 1;
     setCount(count);
+    checkboxCount = checkboxCount + 1;
+    setCheckbox(checkboxCount); 
   }
   function decrementCount() {
     count = count - 1;
     setCount(count);
+    checkboxCount = checkboxCount - 1;
+    setCheckbox(checkboxCount); 
   }
 
   return (
@@ -126,7 +145,7 @@ const SystemIntegratedModal = (props) => {
                     return (
                       <li key={`list-${index}`}>
                         <section>
-                          <input type="checkbox" id={`systeme-list-${index}`} />
+                          <input type="checkbox" id={`systeme-list-${index}`} onChange={countcheckbox} />
                           <label htmlFor={`systeme-list-${index}`}>
                             <img src={listIcon} alt="networkIcon1" />
                             <span>{name}</span>
@@ -145,6 +164,7 @@ const SystemIntegratedModal = (props) => {
                           <input
                             type="checkbox"
                             id={`hersteller-list-${index}`}
+                            onChange={countcheckbox}
                           />
                           <label htmlFor={`hersteller-list-${index}`}>
                             <img src={listIcon} alt="networkIcon1" />
