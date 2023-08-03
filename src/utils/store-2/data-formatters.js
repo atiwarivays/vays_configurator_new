@@ -634,8 +634,28 @@ export const updateFunktionenSelectionsBasedOnIntentions = (selectedIntentions, 
 };
 
 export const get_installationsdauer_calculation = (bedienungQty, funktionenQty) => {
-  const installationsdauer = Math.round((bedienungQty + funktionenQty) * 0.5);
-  return installationsdauer;
+  // const installationsdauer = Math.round((bedienungQty + funktionenQty) * 0.5);
+  var installationsdauer_final = ((bedienungQty + funktionenQty) / 15).toFixed(2);
+  let decimalValue = installationsdauer_final.toString().indexOf(".");
+  let only_decimal_value = installationsdauer_final.toString().substring(decimalValue+1);
+
+  const installationsdauer = Math.round((bedienungQty + funktionenQty) / 15);
+  if (installationsdauer_final > 0 && installationsdauer_final < 1) {
+    installationsdauer_final = 1;
+  }
+  else
+  {
+    if(only_decimal_value>49)
+    {
+      installationsdauer_final = installationsdauer;
+    }
+    else
+    {
+      installationsdauer_final = installationsdauer+1;
+    }
+    
+  }
+  return installationsdauer_final;
 };
 
 export const get_heimautomatisierung_price_impact = (pricingData, selectedHeimautomatisierung, options) => {
