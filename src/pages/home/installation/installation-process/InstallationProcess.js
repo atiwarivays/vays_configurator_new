@@ -36,6 +36,13 @@ const InstallationProcess = (props) => {
   const laufzeitWartungsservice = useSelector(getLaufzeitWartungsservice);
   const laufzeit_gewährleistung = useSelector(get_laufzeit_gewährleistung);
 
+  const handleClickScroll = () => {
+    const element = document.getElementById('five');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleSelectChange = (name) => (options) => {
     switch (name) {
       case "installationservice":
@@ -88,16 +95,16 @@ const InstallationProcess = (props) => {
     },
   ];
 
-  
+
   const [checkboxCount, setItems] = useState([]);
 
-useEffect(() => {
-  const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
-  if (checkboxCount) {
-   setItems(checkboxCount);
-  }
-}, []);
-// alert(checkboxCount);
+  useEffect(() => {
+    const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
+    if (checkboxCount) {
+      setItems(checkboxCount);
+    }
+  }, []);
+  // alert(checkboxCount);
 
   //For default values
   const [wartungDefaultValue] = useState(laufzeitWartungsservice.options[laufzeitWartungsservice.selectedOption].label);
@@ -114,16 +121,16 @@ useEffect(() => {
     fordermittelService.options[fordermittelService.selectedOption].label
   );
   var integrationDefaultValue = 'Keine Integration';
-  if(checkboxCount > 0){
+  if (checkboxCount > 0) {
     integrationDefaultValue = '3 Integrationen';
   }
-  if(checkboxCount > 3){
+  if (checkboxCount > 3) {
     integrationDefaultValue = 'Unbegrenzt Integrationen';
   }
   const [integrationVorhandenerSystemeDefaultValue] = useState(integrationDefaultValue);
-  
-  integrationVorhandenerSysteme.options.map((item) => { 
-    if(integrationDefaultValue == item.label){
+
+  integrationVorhandenerSysteme.options.map((item) => {
+    if (integrationDefaultValue == item.label) {
       integrationDefaultValue = integrationDefaultValue.concat("      ", item.included)
     }
   });
@@ -214,13 +221,13 @@ useEffect(() => {
             <li>
               <label htmlFor="">Integration vorhandener Systeme</label>
               <Select
-                options={integrationVorhandenerSysteme.options.map((item) => ({ 
+                options={integrationVorhandenerSysteme.options.map((item) => ({
                   label: (
                     <div className="heim-container">
                       <p
                         className={item.label === "Unbegrenzt Integrationen" ? "heim-name-Integrationen" : "heim-name"}
                       >
-                        {item.label} 
+                        {item.label}
                       </p>
                       <p className="price">{item.included}</p>
                     </div>
@@ -361,9 +368,9 @@ useEffect(() => {
         </ul>
       </aside>
       <div className="down-arrow">
-        <a href="#">
+        <button onClick={handleClickScroll}>
           <img src={downArrow} alt="downArrow" />
-        </a>
+        </button>
       </div>
     </>
   );
