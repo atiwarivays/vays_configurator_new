@@ -3,6 +3,13 @@ import { getBedienung, konfigurationActions } from "../../../../utils/store-2/ko
 import { Link } from "react-scroll";
 import downArrow from "../../../../assets/images/down-arrow-1.svg";
 
+const handleClickScroll = () => {
+  const element = document.getElementById('four');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const ServiceForm = ({ openModal }) => {
   const dispatch = useDispatch();
   const bedienungSelection = useSelector(getBedienung);
@@ -48,9 +55,9 @@ const ServiceForm = ({ openModal }) => {
         </ul>
       </aside>
       <div className="down-arrow">
-        <a href="#">
+        <button onClick={handleClickScroll}>
           <img src={downArrow} alt="downArrow" />
-        </a>
+        </button>
       </div>
     </>
   );

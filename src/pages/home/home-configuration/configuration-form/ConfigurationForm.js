@@ -9,6 +9,13 @@ import {
 } from "../../../../utils/store-2/konfiguration-slice";
 import downArrow from "../../../../assets/images/down-arrow-1.svg";
 
+const handleClickScroll = () => {
+  const element = document.getElementById('two');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const ConfigurationForm = ({ openModal }) => {
   const dispatch = useDispatch();
   const bauphaseValues = useSelector(getBauphase);
@@ -92,9 +99,9 @@ const ConfigurationForm = ({ openModal }) => {
         </div>
       </aside>
       <div className="down-arrow">
-        <a href="#">
+        <button onClick={handleClickScroll}>
           <img src={downArrow} alt="downArrow" />
-        </a>
+        </button>
       </div>
     </>
   );

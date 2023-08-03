@@ -370,6 +370,11 @@
 
       .down-arrow {
         text-align: center;
+
+        button {
+          background: transparent;
+          border: 0;
+        }
       }
 
       .side-widgets {
