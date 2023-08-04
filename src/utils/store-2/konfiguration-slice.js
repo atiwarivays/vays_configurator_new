@@ -110,7 +110,7 @@ const initialState = {
     options: [
       {
         value: 0,
-        label: "mit Installation",
+        label: "Installation",
         included: "Inklusive",
       },
       {

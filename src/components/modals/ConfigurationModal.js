@@ -185,6 +185,7 @@ export const ConfigurationModal = (props) => {
                     onClick={formSubmitHandler}
                     className={`submit-button cancel ${saveDataState === LOADING && "loader-btn disabled"}`}
                   >
+                  <img src="https://track.joinative.com/conversion.gif?&et=lead" width="1" height="1"/>
                     {props.button_text}
                   </button>
                 </div>
