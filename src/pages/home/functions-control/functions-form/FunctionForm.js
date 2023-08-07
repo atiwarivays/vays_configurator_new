@@ -8,8 +8,14 @@ import {
   konfigurationActions,
 } from "../../../../utils/store-2/konfiguration-slice";
 import { findDataPair, findObjectByKeyValue } from "../../../../utils/constants/api";
-import { Link } from "react-scroll";
 import downArrow from "../../../../assets/images/down-arrow-1.svg";
+
+const handleClickScroll = () => {
+  const element = document.getElementById('three');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 const FunctionForm = ({ openModal, functionSelection }) => {
   const dispatch = useDispatch();
@@ -126,9 +132,9 @@ const FunctionForm = ({ openModal, functionSelection }) => {
         </div>
       </aside>
       <div className="down-arrow">
-        <a href="#">
+        <button onClick={handleClickScroll}>
           <img src={downArrow} alt="downArrow" />
-        </a>
+        </button>
       </div>
     </>
   );

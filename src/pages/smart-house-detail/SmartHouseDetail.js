@@ -33,6 +33,7 @@ import { DataNotFoundModal } from "../../components/modals/DataNotFoundModal";
 import { findIdByLabel, findValueByLabel } from "../../utils/constants/api";
 // import obApi from '../../../public/index.html';
 
+// obApi('track', 'Lead');
 export default function SmartHouseDetail() {
   const { id1, id2 } = useParams();
   const navigate = useNavigate();

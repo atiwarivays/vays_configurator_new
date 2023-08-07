@@ -36,6 +36,13 @@ const InstallationProcess = (props) => {
   const laufzeitWartungsservice = useSelector(getLaufzeitWartungsservice);
   const laufzeit_gewährleistung = useSelector(get_laufzeit_gewährleistung);
 
+  const handleClickScroll = () => {
+    const element = document.getElementById('five');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleSelectChange = (name) => (options) => {
     switch (name) {
       case "installationservice":
@@ -119,10 +126,10 @@ const InstallationProcess = (props) => {
   );
 
   var integrationDefaultValue = 'Keine Integration';
-  if(checkboxCount > 0){
+  if (checkboxCount > 0) {
     integrationDefaultValue = '3 Integrationen';
   }
-  if(checkboxCount > 3){
+  if (checkboxCount > 3) {
     integrationDefaultValue = 'Unbegrenzt Integrationen';
   }
   // const [integrationVorhandenerSystemeDefaultValue] = useState(integrationDefaultValue);
@@ -219,13 +226,13 @@ const InstallationProcess = (props) => {
             <li>
               <label htmlFor="">Integration vorhandener Systeme</label>
               <Select
-                options={integrationVorhandenerSysteme.options.map((item) => ({ 
+                options={integrationVorhandenerSysteme.options.map((item) => ({
                   label: (
                     <div className="heim-container">
                       <p
                         className={item.label === "Unbegrenzt Integrationen" ? "heim-name-Integrationen" : "heim-name"}
                       >
-                        {item.label} 
+                        {item.label}
                       </p>
                       <p className="price">{item.included}</p>
                     </div>
@@ -366,9 +373,9 @@ const InstallationProcess = (props) => {
         </ul>
       </aside>
       <div className="down-arrow">
-        <a href="#">
+        <button onClick={handleClickScroll}>
           <img src={downArrow} alt="downArrow" />
-        </a>
+        </button>
       </div>
     </>
   );
