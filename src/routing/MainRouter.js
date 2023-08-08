@@ -1,4 +1,4 @@
-import { Route, createHashRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import { Route, createHashRouter, createRoutesFromElements, RouterProvider, createBrowserRouter } from "react-router-dom";
 import UserLayout from "../layouts/UserLayout";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/home/Home";
@@ -6,7 +6,7 @@ import SmartHouseDetail from "../pages/smart-house-detail/SmartHouseDetail";
 import Typography from "../components/Typography";
 
 export default function MainRouter() {
-  const router = createHashRouter(
+  const router = createBrowserRouter(
     createRoutesFromElements(
       <>
         <Route path="/" errorElement={<ErrorPage />} element={<UserLayout />}>
