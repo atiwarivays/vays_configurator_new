@@ -95,13 +95,17 @@ const InstallationProcess = (props) => {
     },
   ];
 
-
-  const [checkboxCount, setItems] = useState([]);
-
+  
+  // const [checkboxCount] = useState([JSON.parse(localStorage.getItem('checkboxCount'))]);
+  // const [checkboxCount, setItems] = useState([JSON.parse(localStorage.getItem('checkboxCount'))]);
+  // const {checkboxCount} = this.state
+  // checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
+  
+  const [checkboxCount, setItems] = useState('');
   useEffect(() => {
-    const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
-    if (checkboxCount) {
-      setItems(checkboxCount);
+    var checkboxCount1 = JSON.parse(localStorage.getItem('checkboxCount'));
+    if (checkboxCount1) {
+    setItems(checkboxCount1);
     }
   }, []);
   // alert(checkboxCount);
@@ -120,6 +124,7 @@ const InstallationProcess = (props) => {
   const [fordermittelServiceDefaultValue] = useState(
     fordermittelService.options[fordermittelService.selectedOption].label
   );
+
   var integrationDefaultValue = 'Keine Integration';
   if (checkboxCount > 0) {
     integrationDefaultValue = '3 Integrationen';
@@ -127,10 +132,10 @@ const InstallationProcess = (props) => {
   if (checkboxCount > 3) {
     integrationDefaultValue = 'Unbegrenzt Integrationen';
   }
-  const [integrationVorhandenerSystemeDefaultValue] = useState(integrationDefaultValue);
-
-  integrationVorhandenerSysteme.options.map((item) => {
-    if (integrationDefaultValue == item.label) {
+  // const [integrationVorhandenerSystemeDefaultValue] = useState(integrationDefaultValue);
+  
+  integrationVorhandenerSysteme.options.map((item) => { 
+    if(integrationDefaultValue == item.label){
       integrationDefaultValue = integrationDefaultValue.concat("      ", item.included)
     }
   });

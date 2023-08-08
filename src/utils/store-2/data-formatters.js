@@ -586,6 +586,7 @@ export const get_laufzeit_gewahrleistung_price_impact = (selectedGewahrleistung,
 };
 
 export const calculateFinalPrice = (finalSelections) => {
+  let dataArr = {};
   let totalPrice = 0;
   for (let key in finalSelections) {
     if (finalSelections[key].hasOwnProperty("priceImpact")) {
@@ -597,10 +598,13 @@ export const calculateFinalPrice = (finalSelections) => {
     finalSelections.bauvorhaben !== "Neubau" &&
     finalSelections.installationsservice.selectedValue === "Installation"
   ) {
-    const discount = totalPrice * 0.15;
-    totalPrice = totalPrice - discount;
+    // const discount = totalPrice * 0.15;
+    // totalPrice = totalPrice - discount;
   }
-  return totalPrice.toFixed(2);
+  dataArr.totalPrice = totalPrice.toFixed(2);
+  dataArr.fordermittelservice = finalSelections.fordermittelservice;
+  // return totalPrice.toFixed(2);
+  return dataArr;
 };
 
 export const updateFunktionenSelectionsBasedOnIntentions = (selectedIntentions, funktionen) => {
