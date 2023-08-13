@@ -604,7 +604,6 @@ export const calculateFinalPrice = (finalSelections) => {
   dataArr.totalPrice = totalPrice.toFixed(2);
   dataArr.fordermittelservice = finalSelections.fordermittelservice;
   return totalPrice.toFixed(2);
-  // return dataArr;
 };
 
 export const updateFunktionenSelectionsBasedOnIntentions = (selectedIntentions, funktionen) => {

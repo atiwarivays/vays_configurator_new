@@ -17,9 +17,7 @@ export default function FooterPrice() {
         {finalData.fordermittelservice == '15% Förderung' ? (<small style={{font:"12px", color:"var(--gray-color)"}}> zzgl. ca. {priceTotal } Fördermittelerstattung</small>) : (<small>inkl. MwSt</small>) }
       </h2>
       <span>
-        {/*<small className="discount">{formatGermanPrice(totalPrice.totalPrice * 1.25)}</small>*/}
         <small className="discount">{formatGermanPrice(totalPrice * 1.25)}</small>
-        {/*formatGermanPrice(totalPrice.totalPrice)*/} 
         {formatGermanPrice(totalPrice)} 
         <small className="mobile">inkl. MwSt, zzgl. {priceTotal} Fördermittelerstattung </small>
       </span>

@@ -21,37 +21,63 @@ export default function MainRouter() {
   //     </>
   //   )
   // );
-  const router = createHashRouter([
+  // const router = createHashRouter([
+  //   {
+  //     path: '',
+  //     element: <UserLayout />,
+  //     errorElement: <ErrorPage />,
+  //     children:[
+  //       {
+  //         path: '/angebot',
+  //         element: <SmartHouseDetail />,
+  //         errorElement: <ErrorPage />,
+  //       },
+  //       {
+  //         path: '/angebot/:id',
+  //         element: <SmartHouseDetail />,
+  //         errorElement: <ErrorPage />,
+  //       },
+  //       {
+  //         path: '/angebot/:id1/:id2',
+  //         element: <SmartHouseDetail />,
+  //         errorElement: <ErrorPage />,
+  //       },
+  //       {
+  //         path: '/modals',
+  //         element: <Typography />,
+  //         errorElement: <ErrorPage />,
+  //       },
+  //       {
+  //         index: true,
+  //         element: <Home />
+  //       }
+  //    ]
+  //   },
+  // ]);
+  const router = createBrowserRouter([
     {
       path: '',
       element: <UserLayout />,
       errorElement: <ErrorPage />,
-      children:[
-        {
-          path: '/angebot',
-          element: <SmartHouseDetail />,
-          errorElement: <ErrorPage />,
-        },
-        {
-          path: '/angebot/:id',
-          element: <SmartHouseDetail />,
-          errorElement: <ErrorPage />,
-        },
-        {
-          path: '/angebot/:id1/:id2',
-          element: <SmartHouseDetail />,
-          errorElement: <ErrorPage />,
-        },
-        {
-          path: '/modals',
-          element: <Typography />,
-          errorElement: <ErrorPage />,
-        },
-        {
-          index: true,
-          element: <Home />
-        }
-     ]
+    },
+    {
+      index: true,
+      element: <Home />
+    },
+    {
+      path: '/angebot',
+      element: <SmartHouseDetail />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: '/angebot/:id',
+      element: <SmartHouseDetail />,
+      errorElement: <ErrorPage />,
+    },
+    {
+      path: '/angebot/:id1/:id2',
+      element: <SmartHouseDetail />,
+      errorElement: <ErrorPage />,
     },
   ]);
   return <RouterProvider router={router} />;
