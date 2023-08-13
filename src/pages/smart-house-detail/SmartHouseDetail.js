@@ -31,9 +31,7 @@ import { SUCCEEDED } from "../../lib/messages";
 import Loader from "../../components/modals/loader/Loader";
 import { DataNotFoundModal } from "../../components/modals/DataNotFoundModal";
 import { findIdByLabel, findValueByLabel } from "../../utils/constants/api";
-// import obApi from '../../../public/index.html';
 
-// obApi('track', 'Lead');
 export default function SmartHouseDetail() {
   const { id1, id2 } = useParams();
   const navigate = useNavigate();
@@ -41,8 +39,6 @@ export default function SmartHouseDetail() {
   const [openModal, setOpenModal] = useState(false);
   const [storeUpdated, setStoreUpdated] = useState(false);
 
-
-  // obApi('track', 'Lead');
   //Required to check if this page is being loaded by entering URL in the browser or coming on this from homepage.
   //const redirectUrl = useSelector(getRedirectUrl);
   const configuratorSummaryData = useSelector(getConfiguratorSummaryData);

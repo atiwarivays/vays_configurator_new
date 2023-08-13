@@ -1,5 +1,4 @@
 import axios from "axios";
-import { sampleApiData } from "./sampleData";
 const BASE_URL = "https://api.vays.de/devapi/v1";
 
 export const fetchInitialDataApi = async () => {
@@ -15,11 +14,9 @@ export const fetchInitialDataApi = async () => {
       throw new Error(error.response.data.message);
     });
   return data;
-  // return sampleApiData;
 };
 
 export const saveDataToServerApi = async (serverData) => {
-  console.log("Data being sent to server: ", serverData);
 
   const config = {
     method: "POST",
@@ -38,38 +35,6 @@ export const saveDataToServerApi = async (serverData) => {
   } catch (error) {
     throw new Error(error);
   }
-
-  //For localhost only due to CORS issue
-
-  // try {
-  //   const response = await axios(config);
-  //   const data = response.data;
-  //   console.log(data);
-  //   return {
-  //     success: "true",
-  //     result: "success",
-  //     message: "data saved successfully",
-  //     error: "",
-  //     temp_trans_id: "3218",
-  //     quotation_id: "5109",
-  //     redirect_url: "MzIxOA==",
-  //     redirect_quotation_url: "NTEwOQ==",
-  //     checkout_url: "https://api.vays.de/devorder/checkout/MzIxOA==/NTEwOQ==",
-  //   };
-  // } catch (error) {
-  //   console.log(error);
-  //   return {
-  //     success: "true",
-  //     result: "success",
-  //     message: "data saved successfully",
-  //     error: "",
-  //     temp_trans_id: "3218",
-  //     quotation_id: "5109",
-  //     redirect_url: "MzIxOA==",
-  //     redirect_quotation_url: "NTEwOQ==",
-  //     checkout_url: "https://api.vays.de/devorder/checkout/MzIxOA==/NTEwOQ==",
-  //   };
-  // }
 };
 
 export const fetchConfiguratorSummaryAPI = async (id1, id2) => {

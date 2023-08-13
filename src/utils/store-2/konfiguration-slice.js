@@ -307,7 +307,6 @@ export const fetchConfiguratorSummary = createAsyncThunk("config/fetchConfigurat
 export const saveDataToServer = createAsyncThunk("config/saveDataToServer", async (_, { getState }) => {
   const finalSelections = getState().config.finalSelections;
   const initialData = getState().config.initialData;
-
   const dataForServer = {
     temp_trans_id: getState().config.temp_trans_id,
     quotation_id: getState().config.quotation_id,
@@ -327,7 +326,7 @@ export const saveDataToServer = createAsyncThunk("config/saveDataToServer", asyn
     bedienung: finalSelections.bedienung.apiData,
     installationsservice:
       finalSelections.installationsservice.selectedValue === "Installation"
-        ? initialData.installationsservice[0].productarray
+        ? JSON.parse(JSON.stringify(initialData.installationsservice[0].productarray))
         : finalSelections.installationsservice.selectedValue,
     installation_wunschtermin: finalSelections.installationDate,
     heimautomatisierung: findDataPair(
@@ -363,6 +362,12 @@ export const saveDataToServer = createAsyncThunk("config/saveDataToServer", asyn
     email: getState().config.email,
     phone: getState().config.phone,
   };
+
+  //Updating quantities (total bedeinung devices + funktionen devices)
+  if(finalSelections.installationsservice.selectedValue === "Installation"){
+    dataForServer.installationsservice[1].data[1].productdetail[0].product_uom_qty = finalSelections.funktionen.apiData.no_of_devices + finalSelections.bedienung.apiData.no_of_devices;
+    dataForServer.installationsservice[1].data[2].productdetail[0].product_uom_qty = finalSelections.funktionen.apiData.no_of_devices + finalSelections.bedienung.apiData.no_of_devices;
+  }
   const newDataForServer = modifyDataForServer(dataForServer);
   console.log("Final Selections, please check price impacts in it: ", finalSelections);
 

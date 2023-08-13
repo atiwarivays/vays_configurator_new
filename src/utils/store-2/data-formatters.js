@@ -151,7 +151,6 @@ export const getFunktionenPriceImpact = (
             )
           );
         }
-
         funktionenPrice += alarmsPrice;
         break;
       }
@@ -176,7 +175,7 @@ export const getFunktionenPriceImpact = (
           apiData.data.push(updateQuantityInDataForApi(i, selectedHersteller, 1, initialData, totalNumberOfDevices));
         } else if (selectedHersteller === "FIBARO" || selectedHersteller === "homey") {
           funktionenPrice += funktionenPricingData[i]["Z-Wave"];
-          apiData.data.push(updateQuantityInDataForApi(i, "Bosch", 1, initialData, totalNumberOfDevices));
+          apiData.data.push(updateQuantityInDataForApi(i, "Z-Wave", 1, initialData, totalNumberOfDevices));
         }
         break;
       }
@@ -202,7 +201,6 @@ export const getFunktionenPriceImpact = (
         } else if (selectedHersteller === "FIBARO" || selectedHersteller === "homey") {
           soundPrice = funktionenPricingData["Sound-Heimkino"]["Z-Wave"];
           soundPrice += funktionenPricingData["Sound-Lautsprecher"]["Z-Wave"] * roomsToUse;
-
           apiData.data.push(
             updateQuantityInDataForApi("Sound-Heimkino", "Z-Wave", 1, initialData, totalNumberOfDevices)
           );
@@ -225,7 +223,7 @@ export const getFunktionenPriceImpact = (
   });
 
   //Uncomment this line if need to see individual quantities added by selection of each funktion
-  //apiData.quantities = totalNumberOfDevices;
+  apiData.quantities = totalNumberOfDevices;
 
   let sumOfDeviceQuantities = 0;
   totalNumberOfDevices.forEach((q) => (sumOfDeviceQuantities += q));
@@ -243,7 +241,7 @@ export const getFunktionenPriceImpact = (
     if (unSelectedPricing[f.label]) {
       f.included = `+ ${formatGermanPrice(unSelectedPricing[f.label])}`;
     } else {
-      f.included = "Inklusive";
+      f.included = "gewählt";
     }
   });
 
@@ -440,13 +438,11 @@ export const getBedienungPriceImpact = (
     }
   });
 
-  //Uncomment this line if need to see individual quantities added by selection of each bedienung
-  //apiData.quantities = totalNumberOfDevices;
+  apiData.quantities = totalNumberOfDevices;
 
   let sumOfDeviceQuantities = 0;
   totalNumberOfDevices.forEach((q) => (sumOfDeviceQuantities += q));
   apiData.no_of_devices = sumOfDeviceQuantities;
-  //console.log("Beden: " + sumOfDeviceQuantities);
 
   const unSelectedPricing = getUnselectedBedienungPriceImpact(
     selectedBedienung,
@@ -459,7 +455,7 @@ export const getBedienungPriceImpact = (
     if (unSelectedPricing[b.label]) {
       b.included = `+ ${formatGermanPrice(unSelectedPricing[b.label])}`;
     } else {
-      b.included = "Inklusive";
+      b.included = "gewählt";
     }
   });
 
@@ -586,7 +582,6 @@ export const get_laufzeit_gewahrleistung_price_impact = (selectedGewahrleistung,
 };
 
 export const calculateFinalPrice = (finalSelections) => {
-  let dataArr = {};
   let totalPrice = 0;
   for (let key in finalSelections) {
     if (finalSelections[key].hasOwnProperty("priceImpact")) {
@@ -598,13 +593,10 @@ export const calculateFinalPrice = (finalSelections) => {
     finalSelections.bauvorhaben !== "Neubau" &&
     finalSelections.installationsservice.selectedValue === "Installation"
   ) {
-    // const discount = totalPrice * 0.15;
-    // totalPrice = totalPrice - discount;
+    const discount = totalPrice * 0.15;
+    totalPrice = totalPrice - discount;
   }
-  dataArr.totalPrice = totalPrice.toFixed(2);
-  dataArr.fordermittelservice = finalSelections.fordermittelservice;
-  // return totalPrice.toFixed(2);
-  return dataArr;
+  return totalPrice.toFixed(2);
 };
 
 export const updateFunktionenSelectionsBasedOnIntentions = (selectedIntentions, funktionen) => {
@@ -792,13 +784,12 @@ export const calculateBedienungPricingData = (data) => {
     Szenenschalter: { Bosch: 0, homematic: 0, "Z-Wave": 0 },
     Bedienpanel: { Bosch: 0, homematic: 0, "Z-Wave": 0 },
   };
-  pricingData.Fernbedienung.Bosch = data[0].data[1].productdetail[0].price_total;
-  pricingData.Fernbedienung["Z-Wave"] = data[3].data[1].productdetail[0].price_total;
-  pricingData.Fernbedienung.homematic = data[2].data[1].productdetail[0].price_total;
-  pricingData.Sprachsteuerung.Bosch = data[4].data[1].productdetail[0].price_total;
-  pricingData.Sprachsteuerung.Bosch = data[1].data[1].productdetail[0].price_total;
-  // + data[1].data[2].productdetail[0].price_total +
-  // data[1].data[3].productdetail[0].price_total;
+  
+  pricingData.Fernbedienung.Bosch = data[1].data[1].productdetail[0].price_total;
+  pricingData.Fernbedienung.homematic = data[3].data[1].productdetail[0].price_total;
+  pricingData.Fernbedienung["Z-Wave"] = data[4].data[1].productdetail[0].price_total;
+
+  pricingData.Sprachsteuerung.Bosch = data[2].data[1].productdetail[0].price_total;
   pricingData.Sprachsteuerung.homematic = pricingData.Sprachsteuerung.Bosch;
   pricingData.Sprachsteuerung["Z-Wave"] = pricingData.Sprachsteuerung.Bosch;
 
@@ -953,11 +944,11 @@ export const modifyDataForServer = (dataForServer) => {
       dataForServer.installationsservice === "Keine Installation"
         ? null
         : [
-          {
-            id: dataForServer.fordermittelservice.id,
-            options: dataForServer.fordermittelservice.options,
-          },
-        ],
+            {
+              id: dataForServer.fordermittelservice.id,
+              options: dataForServer.fordermittelservice.options,
+            },
+          ],
     laufzeit_wartungsservice: dataForServer.laufzeit_wartungsservice && [
       {
         id: dataForServer.laufzeit_wartungsservice[1].id,
