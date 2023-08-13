@@ -1,4 +1,4 @@
-import { Route, createHashRouter, createRoutesFromElements, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Route, createHashRouter, createRoutesFromElements, RouterProvider, createBrowserRouter, BrowserRouter, Routes, HashRouter } from "react-router-dom";
 import UserLayout from "../layouts/UserLayout";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/home/Home";
@@ -21,64 +21,42 @@ export default function MainRouter() {
   //     </>
   //   )
   // );
-  // const router = createHashRouter([
-  //   {
-  //     path: '',
-  //     element: <UserLayout />,
-  //     errorElement: <ErrorPage />,
-  //     children:[
-  //       {
-  //         path: '/angebot',
-  //         element: <SmartHouseDetail />,
-  //         errorElement: <ErrorPage />,
-  //       },
-  //       {
-  //         path: '/angebot/:id',
-  //         element: <SmartHouseDetail />,
-  //         errorElement: <ErrorPage />,
-  //       },
-  //       {
-  //         path: '/angebot/:id1/:id2',
-  //         element: <SmartHouseDetail />,
-  //         errorElement: <ErrorPage />,
-  //       },
-  //       {
-  //         path: '/modals',
-  //         element: <Typography />,
-  //         errorElement: <ErrorPage />,
-  //       },
-  //       {
-  //         index: true,
-  //         element: <Home />
-  //       }
-  //    ]
-  //   },
-  // ]);
-  const router = createBrowserRouter([
+
+  const router = createHashRouter([
     {
       path: '',
       element: <UserLayout />,
       errorElement: <ErrorPage />,
+      children:[
+        {
+          path: '/angebot',
+          element: <SmartHouseDetail />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: '/angebot/:id',
+          element: <SmartHouseDetail />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: '/angebot/:id1/:id2',
+          element: <SmartHouseDetail />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          path: '/modals',
+          element: <Typography />,
+          errorElement: <ErrorPage />,
+        },
+        {
+          index: true,
+          element: <Home />
+        }
+     ]
     },
-    {
-      index: true,
-      element: <Home />
-    },
-    {
-      path: '/angebot',
-      element: <SmartHouseDetail />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: '/angebot/:id',
-      element: <SmartHouseDetail />,
-      errorElement: <ErrorPage />,
-    },
-    {
-      path: '/angebot/:id1/:id2',
-      element: <SmartHouseDetail />,
-      errorElement: <ErrorPage />,
-    },
+    // {
+    //   basename: "/react/",
+    // }
   ]);
   return <RouterProvider router={router} />;
 }
