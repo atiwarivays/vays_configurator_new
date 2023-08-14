@@ -596,6 +596,7 @@ export const calculateFinalPrice = (finalSelections) => {
     const discount = totalPrice * 0.15;
     totalPrice = totalPrice - discount;
   }
+  
   return totalPrice.toFixed(2);
 };
 
