@@ -6,7 +6,6 @@ import SmartHouseDetail from "../pages/smart-house-detail/SmartHouseDetail";
 import Typography from "../components/Typography";
 
 export default function MainRouter() {
-
   // const router = createHashRouter(
   // const router = createBrowserRouter(
   //   createRoutesFromElements(
@@ -57,6 +56,5 @@ export default function MainRouter() {
     //   basename: "/react/",
     // }
   ]);
-  
   return <RouterProvider router={router} />;
 }
