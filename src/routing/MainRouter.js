@@ -21,7 +21,7 @@ export default function MainRouter() {
   //   )
   // );
   return (
-    <BrowserRouter basename="/configurat/">
+    <BrowserRouter basename="/configurator/">
     <Routes>
          <Route path="/" errorElement={<ErrorPage />} element={<UserLayout />}>
            <Route index element={<Home />}></Route>
