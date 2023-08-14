@@ -20,7 +20,7 @@ export default function MainRouter() {
   //     </>
   //   )
   // );
-  const router = createHashRouter([
+  const router = createBrowserRouter([
     {
       path: '',
       element: <UserLayout />,
@@ -53,7 +53,7 @@ export default function MainRouter() {
      ]
     },
     // {
-    //   basename: "/react/",
+    //   basename: "/configurat/",
     // }
   ]);
   return <RouterProvider router={router} />;
