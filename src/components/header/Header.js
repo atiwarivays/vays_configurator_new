@@ -58,9 +58,9 @@ export default function Header() {
     initializeOnLoad: true,
   };
 
-  useEffect(() => {
-    window.MessageBirdChatWidget.init(MessageBirdChatWidgetSettings);
-  }, []);
+  // useEffect(() => {
+  //   window.MessageBirdChatWidget.init(MessageBirdChatWidgetSettings);
+  // }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {

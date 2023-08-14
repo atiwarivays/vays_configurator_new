@@ -1,4 +1,4 @@
-import { Route, createHashRouter, createRoutesFromElements, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Route, createHashRouter, createRoutesFromElements, RouterProvider, createBrowserRouter, BrowserRouter, Routes, HashRouter } from "react-router-dom";
 import UserLayout from "../layouts/UserLayout";
 import ErrorPage from "../components/ErrorPage";
 import Home from "../pages/home/Home";
@@ -53,6 +53,9 @@ export default function MainRouter() {
         }
      ]
     },
+    // {
+    //   basename: "/react/",
+    // }
   ]);
   
   return <RouterProvider router={router} />;
