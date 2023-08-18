@@ -24,9 +24,6 @@ import { useState, setState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 
 const SystemIntegratedModal = (props) => {
-  let [count, setCount] = useState(0);
-  let [checkboxCount, setCheckbox] = useState(0);
-
   const IntegratedDataList = [
     {
       listIcon: networkIcon1,
@@ -89,48 +86,64 @@ const SystemIntegratedModal = (props) => {
     },
   ];
   //  var click = [];
-   var click = JSON.parse(localStorage.getItem('clickId'));
+  var click = JSON.parse(localStorage.getItem('clickId'));
+  var localCheckboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
+  var otherCount = JSON.parse(localStorage.getItem('otherCount'));
 
-  // var localClickId = (click.length > 0 ) ? JSON.parse(localStorage.getItem('checkboxCount')) : '';
-  // alert(localClickId);
-  if(Array.isArray(click)){
-    var localClickId = click
+  if(localCheckboxCount !== null){
+   var localcount = localCheckboxCount;
   }else{
+    var localcount = 0
+  }
+  otherCount = (localCheckboxCount !== null) ? otherCount : 0;
+  console.log(localcount);
+  let [checkboxCount, setCheckbox] = useState(localcount);
+  let [count, setCount] = useState(otherCount);
+
+  if (Array.isArray(click)) {
+    var localClickId = click
+  } else {
     var localClickId = [];
   }
   const [clickId, setNames] = useState(localClickId);
 
-  function countcheckbox(e){
-    setNames([...clickId, e.currentTarget.id]);
-    // setNames.push(e.currentTarget.id);
-    //  this.state.clickId.concat(e.currentTarget.id)
-    // alert(e.target.value);
-    // console.log(e.currentTarget.id);
+
+  function countcheckbox(e) {
+    if (clickId.indexOf(e.currentTarget.id) > -1) {
+      setNames(clickId.filter((clickId) => clickId !== e.currentTarget.id));
+    }else{
+      setNames([...clickId, e.currentTarget.id]);
+    }
     if (e.target.checked) {
       checkboxCount = checkboxCount + 1;
-      setCheckbox(checkboxCount); 
-    }else{
+      setCheckbox(checkboxCount);
+    } else {
       checkboxCount = checkboxCount - 1;
-      setCheckbox(checkboxCount); 
-    }   
+      setCheckbox(checkboxCount);
+    }
   }
   localStorage.setItem('checkboxCount', JSON.stringify(checkboxCount));
   localStorage.setItem('clickId', JSON.stringify(clickId));
-  // alert(checkboxCount);
-   console.log(clickId);
+  localStorage.setItem('otherCount', JSON.stringify(count));
+
   function incrementCount() {
     count = count + 1;
     setCount(count);
     checkboxCount = checkboxCount + 1;
-    setCheckbox(checkboxCount); 
+    setCheckbox(checkboxCount);
   }
   function decrementCount() {
-    count = count - 1;
+    count = (count <= 0) ? 0 : count-1;
+    // count = count - 1;
     setCount(count);
-    checkboxCount = checkboxCount - 1;
-    setCheckbox(checkboxCount); 
+    // checkboxCount = checkboxCount - 1;
+    if(count > 0 ){
+      checkboxCount = checkboxCount -1;
+      setCheckbox(checkboxCount);
+    }
   }
   var checkbox = '';
+  var checkBoxH = '';
   return (
     <div className={`modal-wrapper ${props.modalExtraClass}`}>
       <div className="modal-dialog">
@@ -157,19 +170,17 @@ const SystemIntegratedModal = (props) => {
                 <h3>Sprachsteuerungen</h3>
                 <ul className="list-none flex flex-wrap">
                   {IntegratedDataList.map(({ listIcon, name }, index) => {
+                    console.log(clickId.indexOf(`systeme-list-${index}`) > -1);
+                    {/* if (clickId.indexOf(`systeme-list-${index}`) > -1) {
+                      checkbox = 'checked';
+                    } else {
+                      checkbox = '';
+                    } */}
+                    checkbox = (clickId.indexOf(`systeme-list-${index}`) > -1) ? 'checked' : '';
                     return (
                       <li key={`list-${index}`}>
                         <section>
-                        {/* {clickId.map(( clickId ) => {
-                          console.log('==='+clickId)
-                          
-                          if(clickId === `systeme-list-${index}`){
-                             checkbox = '';
-                          }else{
-                             checkbox = '';
-                          }
-                        })} */}
-                          <input type="checkbox" className="checkbox_icon" id={`systeme-list-${index}`} onChange={countcheckbox} />
+                          <input type="checkbox" checked={`${checkbox}`} className="checkbox_icon" id={`systeme-list-${index}`} onChange={countcheckbox} />
                           <label htmlFor={`systeme-list-${index}`}>
                             <img src={listIcon} alt="networkIcon1" />
                             <span>{name}</span>
@@ -182,11 +193,18 @@ const SystemIntegratedModal = (props) => {
                 <h3>Hersteller</h3>
                 <ul className="list-none flex flex-wrap">
                   {HerstellerDataList.map(({ listIcon }, index) => {
+                    {/* if (clickId.indexOf(`hersteller-list-${index}`) > -1) {
+                      checkBoxH = 'checked';
+                    } else {
+                      checkBoxH = '';
+                    } */}
+                    checkBoxH = (clickId.indexOf(`hersteller-list-${index}`) > -1) ? 'checked' : '';
                     return (
                       <li key={`list-${index}`}>
                         <section>
                           <input
                             type="checkbox"
+                            checked={`${checkBoxH}`}
                             id={`hersteller-list-${index}`}
                             onChange={countcheckbox}
                           />
