@@ -20,7 +20,7 @@ import networkIcon17 from "../../../assets/images/networkIcon17.webp";
 import networkIcon18 from "../../../assets/images/networkIcon18.webp";
 import iconMinus from "../../../assets/images/iconMinus.svg";
 import iconPlus from "../../../assets/images/iconPlus.svg";
-import { useState } from "react";
+import { useState, setState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 
 const SystemIntegratedModal = (props) => {
@@ -88,21 +88,36 @@ const SystemIntegratedModal = (props) => {
       listIcon: networkIcon18,
     },
   ];
+  //  var click = [];
+   var click = JSON.parse(localStorage.getItem('clickId'));
+
+  // var localClickId = (click.length > 0 ) ? JSON.parse(localStorage.getItem('checkboxCount')) : '';
+  // alert(localClickId);
+  if(Array.isArray(click)){
+    var localClickId = click
+  }else{
+    var localClickId = [];
+  }
+  const [clickId, setNames] = useState(localClickId);
 
   function countcheckbox(e){
+    setNames([...clickId, e.currentTarget.id]);
+    // setNames.push(e.currentTarget.id);
+    //  this.state.clickId.concat(e.currentTarget.id)
     // alert(e.target.value);
+    // console.log(e.currentTarget.id);
     if (e.target.checked) {
       checkboxCount = checkboxCount + 1;
       setCheckbox(checkboxCount); 
     }else{
       checkboxCount = checkboxCount - 1;
       setCheckbox(checkboxCount); 
-    }
-      
+    }   
   }
   localStorage.setItem('checkboxCount', JSON.stringify(checkboxCount));
+  localStorage.setItem('clickId', JSON.stringify(clickId));
   // alert(checkboxCount);
-  // console.log(checkboxCount);
+   console.log(clickId);
   function incrementCount() {
     count = count + 1;
     setCount(count);
@@ -115,7 +130,7 @@ const SystemIntegratedModal = (props) => {
     checkboxCount = checkboxCount - 1;
     setCheckbox(checkboxCount); 
   }
-
+  var checkbox = '';
   return (
     <div className={`modal-wrapper ${props.modalExtraClass}`}>
       <div className="modal-dialog">
@@ -145,7 +160,16 @@ const SystemIntegratedModal = (props) => {
                     return (
                       <li key={`list-${index}`}>
                         <section>
-                          <input type="checkbox" id={`systeme-list-${index}`} onChange={countcheckbox} />
+                        {/* {clickId.map(( clickId ) => {
+                          console.log('==='+clickId)
+                          
+                          if(clickId === `systeme-list-${index}`){
+                             checkbox = '';
+                          }else{
+                             checkbox = '';
+                          }
+                        })} */}
+                          <input type="checkbox" className="checkbox_icon" id={`systeme-list-${index}`} onChange={countcheckbox} />
                           <label htmlFor={`systeme-list-${index}`}>
                             <img src={listIcon} alt="networkIcon1" />
                             <span>{name}</span>
@@ -185,7 +209,7 @@ const SystemIntegratedModal = (props) => {
                   </button>
                 </div>
                 <div className="flex content-justify-center">
-                  <button className="submit-button cancel">
+                  <button className="submit-button cancel" onClick={props.closeModal}>
                     {props.button_text}
                   </button>
                 </div>

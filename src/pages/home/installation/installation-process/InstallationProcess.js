@@ -95,15 +95,26 @@ const InstallationProcess = (props) => {
     },
   ];
 
+      
+  // }
+  
+  const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
+// alert('testst'+checkboxCount);
+  // const [checkboxCount, setItems] = useState([JSON.parse(localStorage.getItem('checkboxCount'))]);
+  // const [checkboxCount, setItems] = useState(
+  //   (".checkbox_icon").on('click', function(event){
+  //     console.log('tetset');      
+  //     //(... rest of your JS code)
+  //   })
+  // );
 
-  const [checkboxCount, setItems] = useState([]);
 
-  useEffect(() => {
-    const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
-    if (checkboxCount) {
-      setItems(checkboxCount);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
+  //   if (checkboxCount) {
+  //     setItems(checkboxCount);
+  //   }
+  // }, []);
   // alert(checkboxCount);
 
   //For default values
