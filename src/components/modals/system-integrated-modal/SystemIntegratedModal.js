@@ -96,7 +96,6 @@ const SystemIntegratedModal = (props) => {
     var localcount = 0
   }
   otherCount = (localCheckboxCount !== null) ? otherCount : 0;
-  console.log(localcount);
   let [checkboxCount, setCheckbox] = useState(localcount);
   let [count, setCount] = useState(otherCount);
 
@@ -133,14 +132,12 @@ const SystemIntegratedModal = (props) => {
     setCheckbox(checkboxCount);
   }
   function decrementCount() {
-    count = (count <= 0) ? 0 : count-1;
-    // count = count - 1;
-    setCount(count);
-    // checkboxCount = checkboxCount - 1;
     if(count > 0 ){
       checkboxCount = checkboxCount -1;
       setCheckbox(checkboxCount);
     }
+    count = (count <= 0) ? 0 : count-1;
+    setCount(count);
   }
   var checkbox = '';
   var checkBoxH = '';
@@ -170,12 +167,6 @@ const SystemIntegratedModal = (props) => {
                 <h3>Sprachsteuerungen</h3>
                 <ul className="list-none flex flex-wrap">
                   {IntegratedDataList.map(({ listIcon, name }, index) => {
-                    console.log(clickId.indexOf(`systeme-list-${index}`) > -1);
-                    {/* if (clickId.indexOf(`systeme-list-${index}`) > -1) {
-                      checkbox = 'checked';
-                    } else {
-                      checkbox = '';
-                    } */}
                     checkbox = (clickId.indexOf(`systeme-list-${index}`) > -1) ? 'checked' : '';
                     return (
                       <li key={`list-${index}`}>
@@ -193,11 +184,6 @@ const SystemIntegratedModal = (props) => {
                 <h3>Hersteller</h3>
                 <ul className="list-none flex flex-wrap">
                   {HerstellerDataList.map(({ listIcon }, index) => {
-                    {/* if (clickId.indexOf(`hersteller-list-${index}`) > -1) {
-                      checkBoxH = 'checked';
-                    } else {
-                      checkBoxH = '';
-                    } */}
                     checkBoxH = (clickId.indexOf(`hersteller-list-${index}`) > -1) ? 'checked' : '';
                     return (
                       <li key={`list-${index}`}>

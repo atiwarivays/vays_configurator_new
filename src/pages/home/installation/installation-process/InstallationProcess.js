@@ -94,29 +94,8 @@ const InstallationProcess = (props) => {
       description: "Sind Sie nicht zufrieden, erhalten Sie bedingungslos Ihr Geld zurück.",
     },
   ];
-
-      
-  // }
-  
+   
   const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
-// alert('testst'+checkboxCount);
-  // const [checkboxCount, setItems] = useState([JSON.parse(localStorage.getItem('checkboxCount'))]);
-  // const [checkboxCount, setItems] = useState(
-  //   (".checkbox_icon").on('click', function(event){
-  //     console.log('tetset');      
-  //     //(... rest of your JS code)
-  //   })
-  // );
-
-
-  // useEffect(() => {
-  //   const checkboxCount = JSON.parse(localStorage.getItem('checkboxCount'));
-  //   if (checkboxCount) {
-  //     setItems(checkboxCount);
-  //   }
-  // }, []);
-  // alert(checkboxCount);
-
   //For default values
   const [wartungDefaultValue] = useState(laufzeitWartungsservice.options[laufzeitWartungsservice.selectedOption].label);
   const [gewährleistungDefaultValue] = useState(
@@ -132,16 +111,20 @@ const InstallationProcess = (props) => {
     fordermittelService.options[fordermittelService.selectedOption].label
   );
   var integrationDefaultValue = 'Keine Integration';
+  var optionValue = 0;
   if (checkboxCount > 0) {
     integrationDefaultValue = '3 Integrationen';
+    optionValue = 1;
   }
   if (checkboxCount > 3) {
     integrationDefaultValue = 'Unbegrenzt Integrationen';
+    optionValue = 2;
   }
   const [integrationVorhandenerSystemeDefaultValue] = useState(integrationDefaultValue);
 
   integrationVorhandenerSysteme.options.map((item) => {
     if (integrationDefaultValue == item.label) {
+      handleSelectChange("vorhandener");
       integrationDefaultValue = integrationDefaultValue.concat("      ", item.included)
     }
   });
@@ -247,7 +230,7 @@ const InstallationProcess = (props) => {
                 }))}
                 onChange={handleSelectChange("vorhandener")}
                 //  values={[{ label: integrationVorhandenerSystemeDefaultValue, value: 0 }]}
-                values={[{ label: integrationDefaultValue, value: 0 }]}
+                values={[{ label: integrationDefaultValue, value: optionValue }]}
               />
             </li>
             <li className="content-justify-center items-center">
