@@ -14,6 +14,7 @@ import OutsideClickHandler from "react-outside-click-handler";
 import { useEffect, useState } from "react";
 import FaqModal from "../modals/FaqModal";
 import { ConfigurationModal } from "../modals/ConfigurationModal";
+import CookieConsent, { Cookies, getCookieConsentValue } from "react-cookie-consent";
 
 export default function Header() {
   const [isOpenDropDown, setIsOpenDropDown] = useState(false);
@@ -79,8 +80,49 @@ export default function Header() {
       .catch(error => console.error(error));
   }, []);
 
+  //import CookieConsent from "react-cookie-consent";
+
+  const handleAcceptCookie = (acceptedByScrolling) => {
+      if (acceptedByScrolling) {
+        // triggered if user scrolls past threshold
+        alert("Accept was triggered by user scrolling");
+      } else {
+        alert("Accept was triggered by clicking the Accept button");
+      }
+  };
+
+  const handleDeclineCookie = () => {
+    //remove google analytics cookies
+    Cookies.remove("_ga");
+    Cookies.remove("_gat");
+    Cookies.remove("_gid");
+  };
+  
   return (
     <>
+      <CookieConsent
+        location="none"
+        buttonText="Alle akzeptieren"
+        declineButtonText="Cookie-Einstellungen"
+        // disableStyles={true}
+        buttonClasses="submit-button"
+        buttonWrapperClasses="btn-div-cls"
+        contentClasses="cookie-cls"
+        cookieName="myAwesomeCookieName2"
+        overlayStyle={{width: '85%'}}
+        style={{ background: "#ffffff", width:'50%', bottom: '100px', flex:'auto' }}
+        buttonStyle={{ color: "#ffffff", fontSize: "16px", background: '#292d36', width:'45%', display: 'initial', padding: '13px 20px', radius:'10px' }}
+        declineButtonStyle={{color: '#d0d5dd',  fontSize: '16px', background: '#ffffff', width:'45%', margin: '5px'}}
+        expires={150}
+        onAccept={handleAcceptCookie}
+        enableDeclineButton
+        onDecline={handleDeclineCookie}
+      >
+      <h1 style={{color:'#000000'}}>Cookies und Datenschutz3</h1>
+      <hr/>
+      <p style={{color:'#000000'}}>Wir verwenden Cookies, um den Betrieb der Webseite zu gewährleisten, sowie zur Personalisierung und Analyse Ihres Surfverhaltens. Darüber hinaus werden auch Daten an unsere Werbepartner übermittelt.{" "}</p>
+      </CookieConsent>
+
       {openIndentModal === true && (
         <ConfigurationModal
           modalTitle="Ihre Konfiguration speichern?"

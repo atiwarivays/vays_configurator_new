@@ -21,7 +21,7 @@ export default function MainRouter() {
   //   )
   // );
   return (
-    <BrowserRouter basename="/configurator/">
+    <HashRouter>
     <Routes>
          <Route path="/" errorElement={<ErrorPage />} element={<UserLayout />}>
            <Route index element={<Home />}></Route>
@@ -31,43 +31,6 @@ export default function MainRouter() {
            <Route path="/modals" element={<Typography />}></Route>
          </Route>
     </Routes>
-    </BrowserRouter>
-  )
-  // const router = createBrowserRouter([
-  //   {
-  //     path: '',
-  //     element: <UserLayout />,
-  //     errorElement: <ErrorPage />,
-  //     children:[
-  //       {
-  //         path: '/angebot',
-  //         element: <SmartHouseDetail />,
-  //         errorElement: <ErrorPage />,
-  //       },
-  //       {
-  //         path: '/angebot/:id',
-  //         element: <SmartHouseDetail />,
-  //         errorElement: <ErrorPage />,
-  //       },
-  //       {
-  //         path: '/angebot/:id1/:id2',
-  //         element: <SmartHouseDetail />,
-  //         errorElement: <ErrorPage />,
-  //       },
-  //       {
-  //         path: '/modals',
-  //         element: <Typography />,
-  //         errorElement: <ErrorPage />,
-  //       },
-  //       {
-  //         index: true,
-  //         element: <Home />
-  //       }
-  //    ]
-  //   },
-  //   // {
-  //   //   basename: "/configurat/",
-  //   // }
-  // ]);
-  //return <RouterProvider router={router} />;
+    </HashRouter>
+  );
 }
