@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://api.vays.de/devapi/v1";
+const BASE_URL = "https://api.vays.de/api/v1";
 
 export const fetchInitialDataApi = async () => {
   const requestOptions = {
@@ -44,7 +44,7 @@ export const fetchConfiguratorSummaryAPI = async (id1, id2) => {
   };
 
   const data = fetch(
-    `https://api.vays.de/devapi/v1/configuratorsummery?temp_trans_id=${id1}&quotation_id=${id2}`,
+    `https://api.vays.de/api/v1/configuratorsummery?temp_trans_id=${id1}&quotation_id=${id2}`,
     requestOptions
   )
     .then(async function (response) {

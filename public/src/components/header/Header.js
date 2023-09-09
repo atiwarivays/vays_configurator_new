@@ -153,7 +153,7 @@ export default function Header() {
                         <small>24/7 für Sie verfügbar</small>
                       </section>
                     </Link>
-                    <Link target="_blank" to="https://calendly.com/vays/bemusterung">
+                    <Link target="_blank" to="https://calendly.com/vays/expertenberatung">
                       <img src={calendarIcon} alt="calendarIcon" />
                       <section>
                         <span>Expertenberatung</span>

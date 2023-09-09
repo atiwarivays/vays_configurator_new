@@ -39,6 +39,8 @@ export const ConfigurationModal = (props) => {
   const userEmail = useSelector(getUserEmail);
   const userPhone = useSelector(getUserPhone);
   const redirectQuotationUrl = useSelector(getRedirectQuotationUrl);
+  const queryParameters = new URLSearchParams(window.location.search);
+  const utm_source = queryParameters.get("utm_source");
 
   const {
     value: enteredVorname,

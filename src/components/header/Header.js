@@ -74,7 +74,7 @@ export default function Header() {
 
   const [data, setData] = useState(null);
   useEffect(() => {
-    fetch('https://api.vays.de/devapi/v1/visitcount')
+    fetch('https://api.vays.de/api/v1/visitcount')
       .then(response => response.json())
       .then(json => setData(json))
       .catch(error => console.error(error));
@@ -85,9 +85,9 @@ export default function Header() {
   const handleAcceptCookie = (acceptedByScrolling) => {
       if (acceptedByScrolling) {
         // triggered if user scrolls past threshold
-        alert("Accept was triggered by user scrolling");
+        //alert("Accept was triggered by user scrolling");
       } else {
-        alert("Accept was triggered by clicking the Accept button");
+        //alert("Accept was triggered by clicking the Accept button");
       }
   };
 
@@ -103,22 +103,23 @@ export default function Header() {
       <CookieConsent
         location="none"
         buttonText="Alle akzeptieren"
-        declineButtonText="Cookie-Einstellungen"
+        declineButtonText="Alle ablehnen"
         // disableStyles={true}
         buttonClasses="submit-button"
         buttonWrapperClasses="btn-div-cls"
         contentClasses="cookie-cls"
         cookieName="myAwesomeCookieName2"
-        overlayStyle={{width: '85%'}}
-        style={{ background: "#ffffff", width:'50%', bottom: '100px', flex:'auto' }}
+        overlayStyle={{width: '100%', background: 'rgba(0,0,0,.6)', display:'flex', alignItems:'center', justifyContent:'center', zIndex: '99999'}}
+        style={{ background: "#ffffff", width:'100%', maxWidth:'610px', borderRadius:'5px' }}
         buttonStyle={{ color: "#ffffff", fontSize: "16px", background: '#292d36', width:'45%', display: 'initial', padding: '13px 20px', radius:'10px' }}
-        declineButtonStyle={{color: '#d0d5dd',  fontSize: '16px', background: '#ffffff', width:'45%', margin: '5px'}}
+        declineButtonStyle={{color: '#d0d5dd',  fontSize: '16px', background: '#ffffff', margin: '5px'}}
         expires={150}
         onAccept={handleAcceptCookie}
         enableDeclineButton
         onDecline={handleDeclineCookie}
+        overlay={true}
       >
-      <h1 style={{color:'#000000'}}>Cookies und Datenschutz3</h1>
+      <h1 style={{color:'#000000'}}>Cookies und Datenschutz</h1>
       <hr/>
       <p style={{color:'#000000'}}>Wir verwenden Cookies, um den Betrieb der Webseite zu gewährleisten, sowie zur Personalisierung und Analyse Ihres Surfverhaltens. Darüber hinaus werden auch Daten an unsere Werbepartner übermittelt.{" "}</p>
       </CookieConsent>
@@ -220,7 +221,7 @@ export default function Header() {
                         <small>24/7 für Sie verfügbar</small>
                       </section>
                     </Link>
-                    <Link target="_blank" to="https://calendly.com/vays/bemusterung">
+                    <Link target="_blank" to="https://calendly.com/vays/expertenberatung">
                       <img src={calendarIcon} alt="calendarIcon" />
                       <section>
                         <span>Expertenberatung</span>

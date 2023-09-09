@@ -46,7 +46,7 @@ const FaqModal = (props) => {
                               Installateur prüft die örtlichen Gegebenheiten.
                               Gerne können Sie hier im Vorfeld bereits die
                               nötigen Vorbereitungen einsehen:{" "}
-                              <Link to="#">
+                              <Link target="_blank" to="https://drive.google.com/open?id=1d3XvX792VVoS8HxnPmUdhtouY7Lf1NyK&usp=drive_fs">
                                 Installationshinweise herunterladen
                                 <img src={down} alt="download" />
                               </Link>
@@ -98,9 +98,9 @@ const FaqModal = (props) => {
                               bei Ihnen melden und Sie durch die notwendigen
                               bauseiten Rahmenbedingungen führen. Diese können
                               Sie hier im Vorfeld einsehen:{" "}
-                              <Link to="#">
+                              <Link target="_blank" to="https://drive.google.com/open?id=1d3XvX792VVoS8HxnPmUdhtouY7Lf1NyK&usp=drive_fs">
                                 Installationshinweise herunterladen
-                                <img src={down} alt="download" />
+                                <img src={down} alt="download"  />
                               </Link>
                             </p>
                           </li>

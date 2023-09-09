@@ -973,6 +973,14 @@ export const modifyDataForServer = (dataForServer) => {
     lastName: dataForServer.lastName,
     email: dataForServer.email,
     phone: dataForServer.phone,
+    utm_source : dataForServer.utm_source,
+    utm_medium : dataForServer.utm_medium,
+    utm_campaign : dataForServer.utm_campaign,
+    utm_content : dataForServer.utm_content,
+    utm_term : dataForServer.utm_term,
+    utm_placement : dataForServer.utm_placement,
+    placement : dataForServer.placement,
+
   };
 
   newDataForServer.funktionen = makeOneLevelArray(newDataForServer.funktionen);

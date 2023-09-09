@@ -5,7 +5,7 @@ import { getBedienungActiveIndexes, konfigurationActions } from "../../../utils/
 const ServiceImageComponent = () => {
   const activeIndexes = useSelector(getBedienungActiveIndexes);
   const getClassName = (index) => {
-    // console.log(index);
+    console.log(index);
     if (activeIndexes.includes(index)) return "active";
     else return "inactive";
   };

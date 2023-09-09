@@ -190,3 +190,58 @@ html {
     display: block;
   }
 }
+
+/*cookies banner css start*/
+.CookieConsent {
+ position: initial !important;
+}
+
+.cookie-cls {
+   margin: 0 !important;
+}
+
+button#rcc-confirm-button {
+   border-radius: 200px !important;
+   width: auto !important;
+   font-weight: 400;
+   height: auto;
+}
+
+button#rcc-confirm-button:hover {
+  transform: scale(1);
+}
+
+.cookie-cls h1 {
+   padding: 15px 20px;
+   font-weight: 700 !important;
+   font-size: 22px !important;
+   line-height: 30px !important;
+   color: #292d36 !important;
+   margin: 10px 0 5px !important;
+}
+
+.cookie-cls hr {
+   background: #ddd;
+   height: 1px;
+   border: 0;
+}
+
+.cookie-cls p {
+   margin: 0 !important;
+   color: #292d36 !important;
+   font-family: 'Mulish';
+   font-size: 15px;
+   line-height: 23px;
+   font-weight: 400;
+   padding: 10px 20px;
+}
+
+.btn-div-cls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 5px;
+}
+
+
+

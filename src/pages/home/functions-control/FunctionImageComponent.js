@@ -17,7 +17,7 @@ import icon16 from "../../../assets/images/13.1.svg";
 import { getFunktionenActiveIndexes, getHersteller , konfigurationActions} from "../../../utils/store-2/konfiguration-slice";
 import { useSelector, useDispatch } from "react-redux";
 
-const PUBLIC_URL='https://dev.vays.de';
+// const PUBLIC_URL='https://vays.de';
 const FunctionImageComponent = () => {
   const activeIndexes = useSelector(getFunktionenActiveIndexes);
   const herstellerValues = useSelector(getHersteller);
@@ -52,8 +52,6 @@ const FunctionImageComponent = () => {
     if (activeIndexes.includes(index)) return "active";
     else return "inactive";
   };
-  // console.log(window.location.origin);
-  // console.log(PUBLIC_URL);
   const dispatch = useDispatch();
   const changeIconClass = event => {
     let spanId = event.currentTarget.id;
@@ -78,11 +76,11 @@ const FunctionImageComponent = () => {
       <figcaption>
         {filteredControlOptions.map(({ icon, id }, index) => {
           return (
-            <span className={`${getClassName(id)} test control-options opo-${id + 1}`} key={index} 
+            <span className={`${getClassName(id)} control-options opo-${id + 1}`} key={index} 
             id={`span_${id}`} 
             onClick={changeIconClass} 
             >
-              <img src={PUBLIC_URL+icon} alt="icon" />
+              <img src={icon} alt="icon" />
             </span>
           );
         })}

@@ -307,6 +307,15 @@ export const fetchConfiguratorSummary = createAsyncThunk("config/fetchConfigurat
 export const saveDataToServer = createAsyncThunk("config/saveDataToServer", async (_, { getState }) => {
   const finalSelections = getState().config.finalSelections;
   const initialData = getState().config.initialData;
+  const queryParameters = new URLSearchParams(window.location.search);
+  const  utm_source = queryParameters.get(`utm_source`);
+  const  utm_medium = queryParameters.get("utm_medium");
+  const  utm_campaign = queryParameters.get("utm_campaign");
+  const  utm_content = queryParameters.get("utm_content");
+  const  utm_term = queryParameters.get("utm_term");
+  const  utm_placement = queryParameters.get("utm_placement");
+  const  placement = queryParameters.get("placement");
+  alert(utm_source+'-'+utm_medium);
   const dataForServer = {
     temp_trans_id: getState().config.temp_trans_id,
     quotation_id: getState().config.quotation_id,
@@ -361,6 +370,13 @@ export const saveDataToServer = createAsyncThunk("config/saveDataToServer", asyn
     lastName: getState().config.lastName,
     email: getState().config.email,
     phone: getState().config.phone,
+    utm_source : utm_source,
+    utm_medium : utm_medium,
+    utm_campaign : utm_campaign,
+    utm_content : utm_content,
+    utm_term : utm_term,
+    utm_placement : utm_placement,
+    placement : placement,
   };
 
   //Updating quantities (total bedeinung devices + funktionen devices)
@@ -369,6 +385,7 @@ export const saveDataToServer = createAsyncThunk("config/saveDataToServer", asyn
     dataForServer.installationsservice[1].data[2].productdetail[0].product_uom_qty = finalSelections.funktionen.apiData.no_of_devices + finalSelections.bedienung.apiData.no_of_devices;
   }
   const newDataForServer = modifyDataForServer(dataForServer);
+  console.log("postdata : ", newDataForServer);
   console.log("Final Selections, please check price impacts in it: ", finalSelections);
 
   try {
