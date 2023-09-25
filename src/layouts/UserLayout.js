@@ -12,12 +12,13 @@ export default function UserLayout() {
         const handleExitIntent = (e) => {
             if (e.clientY <= 0 && !exitIntentTriggered) {
                 setExitIntentTriggered(true);
+                const timer = setTimeout(() => {
                 setOpenIndentModal(true);
+            }, 6000);
+            return () => clearTimeout(timer);
             }
         };
-
         window.addEventListener('mouseout', handleExitIntent);
-
         return () => {
             window.removeEventListener('mouseout', handleExitIntent);
         };

@@ -87,9 +87,9 @@ const SmartHouse = () => {
             expertAdviceModal={() => {
               setOpenExpertAdviceModal(!openExpertAdviceModal);
             }}
-            warenkorbModal={() => {
-              setOpenConfigurationModal(!openConfigurationModal);
-            }}
+            // warenkorbModal={() => {
+            //   setOpenConfigurationModal(!openConfigurationModal);
+            // }}
           />
         </div>
       </div>
@@ -121,7 +121,7 @@ const SmartHouse = () => {
       {openConfigurationModal === true && (
         <ConfigurationModal
           modalTitle="Konfiguration speichern"
-          button_text="Speichern"
+          button_text="Speichern1"
           bottomLineIntro={[
             <p>
               Indem Sie auf “Speichern” klicken, akzeptieren Sie unsere <Link to="/">Datenschutzbedingungen</Link>.

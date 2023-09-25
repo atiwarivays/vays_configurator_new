@@ -71,11 +71,11 @@ const HomeConfiguration = () => {
               setOpenIntention(!openIntention);
             }}
           /> */}
-          <ZentraleForm
+          {/* <ZentraleForm
             openModal={() => {
               setOpenTabSystemeModal(!openTabSystemeModal);
             }}
-          />
+          /> */}
         </div>
       </div>
       {openIntention === true && (

@@ -28,13 +28,19 @@ export default function FooterOne() {
               Konfiguration speichern
             </button>
 
-            <button
+            {/* <button
               onClick={() => {
                 setOpenConfigurationModal(true);
               }}
               className="submit-button second-btn"
             >
-              Weiter zur Übersicht
+              Weiter zum Angebot
+            </button> */}
+
+            <button
+              className="submit-button second-btn"
+            >
+              Weiter zum Angebot
             </button>
           </div>
         </div>

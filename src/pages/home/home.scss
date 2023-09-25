@@ -2230,3 +2230,20 @@ button.link {
   position: absolute;
   right: 42px;
 }
+
+.form-list li {
+  width: 100%;
+    margin-bottom: 12px;
+
+    p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 20px;
+      color: #475467;
+      a{
+        text-decoration-line: underline;
+        color: #475467;
+      }
+    }
+}

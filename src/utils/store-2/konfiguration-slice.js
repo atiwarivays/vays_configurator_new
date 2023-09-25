@@ -54,7 +54,7 @@ const initialState = {
     options: [
       {
         value: 0,
-        label: "Bosch",
+        label: "FIBARO",
       },
       {
         value: 1,
@@ -62,7 +62,7 @@ const initialState = {
       },
       {
         value: 2,
-        label: "FIBARO",
+        label: "Bosch",
       },
       {
         value: 3,
@@ -315,7 +315,7 @@ export const saveDataToServer = createAsyncThunk("config/saveDataToServer", asyn
   const  utm_term = queryParameters.get("utm_term");
   const  utm_placement = queryParameters.get("utm_placement");
   const  placement = queryParameters.get("placement");
-  alert(utm_source+'-'+utm_medium);
+  //alert(utm_source+'-'+utm_medium);
   const dataForServer = {
     temp_trans_id: getState().config.temp_trans_id,
     quotation_id: getState().config.quotation_id,

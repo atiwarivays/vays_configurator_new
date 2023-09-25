@@ -32,7 +32,7 @@ const SmartHouseSidebar = (props) => {
             )}
             <h6>Installationsdauer</h6><span>ca. 3 Tage</span>
             <button onClick={props.warenkorbModal} className="submit-button">
-              Weiter zur Übersicht
+            Weiter zum Angebot
             </button>
             <button onClick={props.expertAdviceModal} className="submit-button transparent">
               Persönliche Fachberatung
